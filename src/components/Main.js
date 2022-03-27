@@ -17,7 +17,18 @@ export class Main extends Component {
         }
     }
 
-    handleFirstNameInput(e) {
+    handleInput(e, target) {
+        let key = `${target}`
+        this.setState((prevState) => ({
+            personal: {
+                ...prevState.personal,
+                [key]: e.target.value,
+                id: this.state.personal.id,
+            },
+        }))
+    }
+
+    /*     handleFirstNameInput(e) {
         this.setState((prevState) => ({
             personal: {
                 ...prevState.personal,
@@ -25,37 +36,7 @@ export class Main extends Component {
                 id: this.state.personal.id,
             },
         }))
-    }
-
-    handleLastNameInput(e) {
-        this.setState((prevState) => ({
-            personal: {
-                ...prevState.personal,
-                lastName: e.target.value,
-                id: this.state.personal.id,
-            },
-        }))
-    }
-
-    handleTitleInput(e) {
-        this.setState((prevState) => ({
-            personal: {
-                ...prevState.personal,
-                title: e.target.value,
-                id: this.state.personal.id,
-            },
-        }))
-    }
-
-    handleAddressInput(e) {
-        this.setState((prevState) => ({
-            personal: {
-                ...prevState.personal,
-                address: e.target.value,
-                id: this.state.personal.id,
-            },
-        }))
-    }
+    } */
 
     render() {
         const personal = this.state.personal
@@ -63,16 +44,16 @@ export class Main extends Component {
             <div className="main-wrapper">
                 <Inputs
                     changeFirstName={(e) => {
-                        this.handleFirstNameInput(e)
+                        this.handleInput(e, 'firstName')
                     }}
                     changeLastName={(e) => {
-                        this.handleLastNameInput(e)
+                        this.handleInput(e, 'lastName')
                     }}
                     changeTitle={(e) => {
-                        this.handleTitleInput(e)
+                        this.handleInput(e, 'title')
                     }}
                     changeAddress={(e) => {
-                        this.handleAddressInput(e)
+                        this.handleInput(e, 'address')
                     }}
                 ></Inputs>
                 <Preview personal={personal}></Preview>
