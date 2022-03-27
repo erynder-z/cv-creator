@@ -29,6 +29,15 @@ export class Inputs extends Component {
                             this.props.changeLastName(e)
                         }}
                     />
+                    <input
+                        className="title-input"
+                        type="text"
+                        id="titleInput"
+                        placeholder="title"
+                        onChange={(e) => {
+                            this.props.changeTitle(e)
+                        }}
+                    />
                 </div>
             </div>
         )
