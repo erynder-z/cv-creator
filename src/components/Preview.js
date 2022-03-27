@@ -18,7 +18,9 @@ export class Preview extends Component {
                 <div className="personal-information-preview-side">
                     Personal Info
                 </div>
-                <div className="info-wrapper-preview">Experience</div>
+                <div className="info-wrapper-preview">
+                    <div className="title-preview">{personal.title}</div>
+                </div>
             </div>
         )
     }
