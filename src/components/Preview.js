@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import placeholder from '../assets/placeholder.png'
+/* import placeholder from '../assets/placeholder.png' */
 
 export class Preview extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ export class Preview extends Component {
 
                 <div className="personal-information-preview-side">
                     <div className="picture">
-                        <img src={placeholder} alt="" />
+                        <img src={personal.picture} alt="Test" />
                     </div>
                     <h4>Personal Info</h4>
                     <div className="title-preview">
