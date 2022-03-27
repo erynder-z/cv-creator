@@ -1,17 +1,63 @@
 .main-wrapper {
-  width: 100vw;
-  height: 93vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'inputs preview';
+    width: 100vw;
+    height: 93vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'inputs preview';
 }
 
 .inputs {
-  background-color: rgb(226, 200, 152);
-  grid-area: inputs;
+    background-color: rgb(226, 200, 152);
+    grid-area: inputs;
+}
+
+.personal-information-input {
+    background-color: beige;
+    margin: 1rem;
+    height: 40vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr) 2fr;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 .preview {
-  background-color: rgb(226, 182, 152);
-  grid-area: preview;
+    background-color: rgb(226, 182, 152);
+    grid-area: preview;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-areas:
+        'up up up up'
+        'cont cont cont person'
+        'cont cont cont person'
+        'cont cont cont person'
+        'cont cont cont person'
+        'cont cont cont person'
+        'cont cont cont person'
+        'cont cont cont person'
+        'cont cont cont person'
+        'cont cont cont person';
+}
+
+.personal-information-preview-top {
+    /*  height: 10vh; */
+    background-color: salmon;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    grid-area: up;
+}
+
+.info-wrapper-preview {
+    background-color: rgb(199, 45, 45);
+    grid-area: cont;
+}
+
+.personal-information-preview-side {
+    background-color: rgb(114, 173, 250);
+    grid-area: person;
 }
