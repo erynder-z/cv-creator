@@ -3,10 +3,15 @@ import React, { Component } from 'react';
 export class Preview extends Component {
   constructor(props) {
     super();
-    this.state = {};
   }
-
   render() {
-    return <div className="preview ">preview</div>;
+    const { personal } = this.props;
+    return (
+      <div className="preview ">
+        <div className="personal-information-preview">
+          <div className="first-name-preview">{personal.firstName}</div>
+        </div>
+      </div>
+    );
   }
 }
