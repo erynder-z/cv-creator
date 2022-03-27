@@ -16,7 +16,16 @@ export class Inputs extends Component {
             id="firstNameInput"
             placeholder="first name"
             onChange={(e) => {
-              this.props.change(e);
+              this.props.changeFirstName(e);
+            }}
+          />
+          <input
+            className="last-name-input"
+            type="text"
+            id="lastNameInput"
+            placeholder="last name"
+            onChange={(e) => {
+              this.props.changeLastName(e);
             }}
           />
         </div>
