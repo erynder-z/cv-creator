@@ -66,3 +66,7 @@
     padding: 1rem;
     max-width: 15vw;
 }
+.picture > img {
+    height: 10rem;
+    width: auto;
+}
