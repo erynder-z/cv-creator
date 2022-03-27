@@ -65,6 +65,16 @@ export class Inputs extends Component {
                             this.props.changeEmail(e)
                         }}
                     />
+                    <label htmlFor="picture">Choose a profile picture:</label>
+                    <input
+                        type="file"
+                        id="picture"
+                        name="picture"
+                        accept="image/png, image/jpeg"
+                        onChange={(e) => {
+                            this.props.uploadPic(e)
+                        }}
+                    ></input>
                 </div>
             </div>
         )

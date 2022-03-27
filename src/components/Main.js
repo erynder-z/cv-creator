@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import uniqid from 'uniqid'
 import { Inputs } from './Inputs'
 import { Preview } from './Preview'
+import placeholder from '../assets/placeholder.png'
 
 export class Main extends Component {
     constructor() {
@@ -15,6 +16,7 @@ export class Main extends Component {
                 address: '',
                 phone: '',
                 email: '',
+                picture: placeholder,
             },
         }
     }
@@ -40,6 +42,27 @@ export class Main extends Component {
         }))
     } */
 
+    uploadPicture(e) {
+        let file = e.target.files[0]
+        // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+        let reader = new FileReader()
+
+        if (e.target.files.length === 0) {
+            return
+        }
+
+        reader.onloadend = (e) => {
+            this.setState((prevState) => ({
+                personal: {
+                    ...prevState.personal,
+                    picture: [reader.result],
+                    id: this.state.personal.id,
+                },
+            }))
+        }
+        reader.readAsDataURL(file)
+    }
+
     render() {
         const personal = this.state.personal
         return (
@@ -62,6 +85,9 @@ export class Main extends Component {
                     }}
                     changeEmail={(e) => {
                         this.handleInput(e, 'email')
+                    }}
+                    uploadPic={(e) => {
+                        this.uploadPicture(e)
                     }}
                 ></Inputs>
                 <Preview personal={personal}></Preview>
