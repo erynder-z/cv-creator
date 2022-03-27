@@ -38,6 +38,15 @@ export class Inputs extends Component {
                             this.props.changeTitle(e)
                         }}
                     />
+                    <input
+                        className="address-input"
+                        type="text"
+                        id="addressInput"
+                        placeholder="address"
+                        onChange={(e) => {
+                            this.props.changeAddress(e)
+                        }}
+                    />
                 </div>
             </div>
         )
