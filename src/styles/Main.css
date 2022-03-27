@@ -26,6 +26,7 @@
     background-color: rgb(226, 182, 152);
     grid-area: preview;
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-template-areas:
         'up up up up'
@@ -55,9 +56,13 @@
 .info-wrapper-preview {
     background-color: rgb(199, 45, 45);
     grid-area: cont;
+    padding: 1rem;
+    overflow: auto;
 }
 
 .personal-information-preview-side {
     background-color: rgb(114, 173, 250);
     grid-area: person;
+    padding: 1rem;
+    max-width: 15vw;
 }
