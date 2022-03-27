@@ -47,6 +47,15 @@ export class Inputs extends Component {
                             this.props.changeAddress(e)
                         }}
                     />
+                    <input
+                        className="phone-input"
+                        type="phone"
+                        id="phoneInput"
+                        placeholder="phone"
+                        onChange={(e) => {
+                            this.props.changePhone(e)
+                        }}
+                    />
                 </div>
             </div>
         )
