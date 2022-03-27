@@ -12,6 +12,7 @@ export class Main extends Component {
                 firstName: '',
                 lastName: '',
                 title: '',
+                address: '',
             },
         }
     }
@@ -46,6 +47,16 @@ export class Main extends Component {
         }))
     }
 
+    handleAddressInput(e) {
+        this.setState((prevState) => ({
+            personal: {
+                ...prevState.personal,
+                address: e.target.value,
+                id: this.state.personal.id,
+            },
+        }))
+    }
+
     render() {
         const personal = this.state.personal
         return (
@@ -59,6 +70,9 @@ export class Main extends Component {
                     }}
                     changeTitle={(e) => {
                         this.handleTitleInput(e)
+                    }}
+                    changeAddress={(e) => {
+                        this.handleAddressInput(e)
                     }}
                 ></Inputs>
                 <Preview personal={personal}></Preview>
