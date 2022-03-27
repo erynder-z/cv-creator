@@ -56,6 +56,15 @@ export class Inputs extends Component {
                             this.props.changePhone(e)
                         }}
                     />
+                    <input
+                        className="email-input"
+                        type="email"
+                        id="emailInput"
+                        placeholder="email"
+                        onChange={(e) => {
+                            this.props.changeEmail(e)
+                        }}
+                    />
                 </div>
             </div>
         )
