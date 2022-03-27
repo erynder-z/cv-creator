@@ -16,9 +16,23 @@ export class Main extends Component {
   }
 
   handleFirstNameInput(e) {
-    this.setState({
-      personal: { firstName: e.target.value, id: this.state.personal.id },
-    });
+    this.setState((prevState) => ({
+      personal: {
+        ...prevState.personal,
+        firstName: e.target.value,
+        id: this.state.personal.id,
+      },
+    }));
+  }
+
+  handleLastNameInput(e) {
+    this.setState((prevState) => ({
+      personal: {
+        ...prevState.personal,
+        lastName: e.target.value,
+        id: this.state.personal.id,
+      },
+    }));
   }
 
   render() {
@@ -26,8 +40,11 @@ export class Main extends Component {
     return (
       <div className="main-wrapper">
         <Inputs
-          change={(e) => {
+          changeFirstName={(e) => {
             this.handleFirstNameInput(e);
+          }}
+          changeLastName={(e) => {
+            this.handleLastNameInput(e);
           }}
         ></Inputs>
         <Preview personal={personal}></Preview>
