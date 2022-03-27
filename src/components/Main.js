@@ -14,6 +14,7 @@ export class Main extends Component {
                 title: '',
                 address: '',
                 phone: '',
+                email: '',
             },
         }
     }
@@ -58,6 +59,9 @@ export class Main extends Component {
                     }}
                     changePhone={(e) => {
                         this.handleInput(e, 'phone')
+                    }}
+                    changeEmail={(e) => {
+                        this.handleInput(e, 'email')
                     }}
                 ></Inputs>
                 <Preview personal={personal}></Preview>
