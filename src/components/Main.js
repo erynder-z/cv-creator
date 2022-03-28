@@ -52,7 +52,7 @@ export class Main extends Component {
             return
         }
 
-        reader.onloadend = (e) => {
+        reader.onloadend = () => {
             this.setState((prevState) => ({
                 personal: {
                     ...prevState.personal,
