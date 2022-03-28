@@ -127,6 +127,12 @@ export class Main extends Component {
                         uploadPic={(e) => {
                             this.uploadPicture(e)
                         }}
+                        changeInputTypeIn={(e) => {
+                            this.changeInputToDate(e)
+                        }}
+                        changeInputTypeOut={(e) => {
+                            this.changeInputToText(e)
+                        }}
                     ></PersonalInfo>
                     <WorkExperience
                         changePosition={(e) => {
