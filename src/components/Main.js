@@ -13,6 +13,7 @@ export class Main extends Component {
                 id: uniqid(),
                 firstName: '',
                 lastName: '',
+                birthday: '',
                 title: '',
                 address: '',
                 phone: '',
@@ -104,6 +105,9 @@ export class Main extends Component {
                     changeLastName={(e) => {
                         this.handleInput(e, 'lastName')
                     }}
+                    changeDOB={(e) => {
+                        this.handleInput(e, 'birthday')
+                    }}
                     changeTitle={(e) => {
                         this.handleInput(e, 'title')
                     }}
@@ -147,6 +151,7 @@ Main.propTypes = {
     id: PropTypes.string,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
+    birthday: PropTypes.string,
     title: PropTypes.string,
     address: PropTypes.string,
     phone: PropTypes.number,

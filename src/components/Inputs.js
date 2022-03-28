@@ -31,6 +31,21 @@ export class Inputs extends Component {
                         }}
                     />
                     <input
+                        className="birthday-input"
+                        type="text"
+                        id="birthdayInput"
+                        placeholder="birthday"
+                        onFocus={(e) => {
+                            this.props.changeInputTypeIn(e)
+                        }}
+                        onBlur={(e) => {
+                            this.props.changeInputTypeOut(e)
+                        }}
+                        onChange={(e) => {
+                            this.props.changeDOB(e)
+                        }}
+                    />
+                    <input
                         className="title-input"
                         type="text"
                         id="titleInput"
@@ -131,6 +146,7 @@ Inputs.propTypes = {
     id: PropTypes.string,
     changeFirstName: PropTypes.func,
     changeLastName: PropTypes.func,
+    changeDOB: PropTypes.func,
     changeTitle: PropTypes.func,
     changeAddress: PropTypes.func,
     changePhone: PropTypes.func,
