@@ -20,6 +20,14 @@ export class Main extends Component {
                 description: '',
                 picture: placeholder,
             },
+            experience: {
+                id: uniqid(),
+                position: '',
+                company: '',
+                from: '',
+                to: '',
+            },
+            experiences: [],
         }
     }
 
@@ -44,6 +52,17 @@ export class Main extends Component {
         }))
     } */
 
+    handleInputExperience(e, target) {
+        let key = `${target}`
+        this.setState((prevState) => ({
+            experience: {
+                ...prevState.experience,
+                [key]: e.target.value,
+                id: this.state.experience.id,
+            },
+        }))
+    }
+
     uploadPicture(e) {
         let file = e.target.files[0]
         // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
@@ -67,6 +86,7 @@ export class Main extends Component {
 
     render() {
         const personal = this.state.personal
+        const experience = this.state.experience
         return (
             <div className="main-wrapper">
                 <Inputs
@@ -94,8 +114,11 @@ export class Main extends Component {
                     uploadPic={(e) => {
                         this.uploadPicture(e)
                     }}
+                    changePosition={(e) => {
+                        this.handleInputExperience(e, 'position')
+                    }}
                 ></Inputs>
-                <Preview personal={personal}></Preview>
+                <Preview personal={personal} experience={experience}></Preview>
             </div>
         )
     }
