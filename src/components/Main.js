@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import uniqid from 'uniqid'
 import { Inputs } from './Inputs'
+import { PersonalInfo } from './PersonalInfo'
+import { WorkExperience } from './WorkExperience'
 import { Preview } from './Preview'
 import placeholder from '../assets/placeholder.png'
 import PropTypes from 'prop-types'
@@ -98,53 +100,57 @@ export class Main extends Component {
         const experience = this.state.experience
         return (
             <div className="main-wrapper">
-                <Inputs
-                    changeFirstName={(e) => {
-                        this.handleInput(e, 'firstName')
-                    }}
-                    changeLastName={(e) => {
-                        this.handleInput(e, 'lastName')
-                    }}
-                    changeDOB={(e) => {
-                        this.handleInput(e, 'birthday')
-                    }}
-                    changeTitle={(e) => {
-                        this.handleInput(e, 'title')
-                    }}
-                    changeAddress={(e) => {
-                        this.handleInput(e, 'address')
-                    }}
-                    changePhone={(e) => {
-                        this.handleInput(e, 'phone')
-                    }}
-                    changeEmail={(e) => {
-                        this.handleInput(e, 'email')
-                    }}
-                    changeDescription={(e) => {
-                        this.handleInput(e, 'description')
-                    }}
-                    uploadPic={(e) => {
-                        this.uploadPicture(e)
-                    }}
-                    changePosition={(e) => {
-                        this.handleInputExperience(e, 'position')
-                    }}
-                    changeCompany={(e) => {
-                        this.handleInputExperience(e, 'company')
-                    }}
-                    changeInputTypeIn={(e) => {
-                        this.changeInputToDate(e)
-                    }}
-                    changeInputTypeOut={(e) => {
-                        this.changeInputToText(e)
-                    }}
-                    changeCompanyFrom={(e) => {
-                        this.handleInputExperience(e, 'from')
-                    }}
-                    changeCompanyTo={(e) => {
-                        this.handleInputExperience(e, 'to')
-                    }}
-                ></Inputs>
+                <Inputs>
+                    <PersonalInfo
+                        changeFirstName={(e) => {
+                            this.handleInput(e, 'firstName')
+                        }}
+                        changeLastName={(e) => {
+                            this.handleInput(e, 'lastName')
+                        }}
+                        changeDOB={(e) => {
+                            this.handleInput(e, 'birthday')
+                        }}
+                        changeTitle={(e) => {
+                            this.handleInput(e, 'title')
+                        }}
+                        changeAddress={(e) => {
+                            this.handleInput(e, 'address')
+                        }}
+                        changePhone={(e) => {
+                            this.handleInput(e, 'phone')
+                        }}
+                        changeEmail={(e) => {
+                            this.handleInput(e, 'email')
+                        }}
+                        changeDescription={(e) => {
+                            this.handleInput(e, 'description')
+                        }}
+                        uploadPic={(e) => {
+                            this.uploadPicture(e)
+                        }}
+                    ></PersonalInfo>
+                    <WorkExperience
+                        changePosition={(e) => {
+                            this.handleInputExperience(e, 'position')
+                        }}
+                        changeCompany={(e) => {
+                            this.handleInputExperience(e, 'company')
+                        }}
+                        changeInputTypeIn={(e) => {
+                            this.changeInputToDate(e)
+                        }}
+                        changeInputTypeOut={(e) => {
+                            this.changeInputToText(e)
+                        }}
+                        changeCompanyFrom={(e) => {
+                            this.handleInputExperience(e, 'from')
+                        }}
+                        changeCompanyTo={(e) => {
+                            this.handleInputExperience(e, 'to')
+                        }}
+                    ></WorkExperience>
+                </Inputs>
                 <Preview personal={personal} experience={experience}></Preview>
             </div>
         )
