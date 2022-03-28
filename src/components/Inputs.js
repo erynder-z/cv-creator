@@ -66,6 +66,15 @@ export class Inputs extends Component {
                             this.props.changeEmail(e)
                         }}
                     />
+                    <textarea
+                        className="description-input"
+                        type="text"
+                        id="descriptionInput"
+                        placeholder="description"
+                        onChange={(e) => {
+                            this.props.changeDescription(e)
+                        }}
+                    />
                     <label htmlFor="picture">Choose a profile picture:</label>
                     <input
                         type="file"
@@ -90,5 +99,6 @@ Inputs.propTypes = {
     changeAddress: PropTypes.func,
     changePhone: PropTypes.func,
     changeEmail: PropTypes.func,
+    changeDescription: PropTypes.func,
     uploadPic: PropTypes.func,
 }
