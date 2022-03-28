@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export class Inputs extends Component {
-    constructor(props) {
+    constructor() {
         super()
         this.state = {}
     }
