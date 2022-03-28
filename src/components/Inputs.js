@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export class Inputs extends Component {
     constructor(props) {
-        super(props)
+        super()
         this.state = {}
     }
 
@@ -79,4 +80,15 @@ export class Inputs extends Component {
             </div>
         )
     }
+}
+
+Inputs.propTypes = {
+    id: PropTypes.string,
+    changeFirstName: PropTypes.func,
+    changeLastName: PropTypes.func,
+    changeTitle: PropTypes.func,
+    changeAddress: PropTypes.func,
+    changePhone: PropTypes.func,
+    changeEmail: PropTypes.func,
+    uploadPic: PropTypes.func,
 }
