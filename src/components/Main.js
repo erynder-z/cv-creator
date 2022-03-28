@@ -3,6 +3,7 @@ import uniqid from 'uniqid'
 import { Inputs } from './Inputs'
 import { Preview } from './Preview'
 import placeholder from '../assets/placeholder.png'
+import PropTypes from 'prop-types'
 
 export class Main extends Component {
     constructor() {
@@ -94,4 +95,14 @@ export class Main extends Component {
             </div>
         )
     }
+}
+Main.propTypes = {
+    id: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    title: PropTypes.string,
+    address: PropTypes.string,
+    phone: PropTypes.number,
+    email: PropTypes.string,
+    picture: PropTypes.object,
 }
