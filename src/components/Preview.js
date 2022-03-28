@@ -50,6 +50,8 @@ export class Preview extends Component {
                     <h5>Company</h5>
                     {<div className="title-preview">{experience.company}</div>}
                     <h5>From</h5>
+                    {<div className="title-preview">{experience.to}</div>}
+                    <h5>To</h5>
                     {<div className="title-preview">{experience.from}</div>}
                     <h4>Education</h4>
                 </div>
