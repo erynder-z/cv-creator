@@ -141,6 +141,9 @@ export class Main extends Component {
                     changeCompanyFrom={(e) => {
                         this.handleInputExperience(e, 'from')
                     }}
+                    changeCompanyTo={(e) => {
+                        this.handleInputExperience(e, 'to')
+                    }}
                 ></Inputs>
                 <Preview personal={personal} experience={experience}></Preview>
             </div>

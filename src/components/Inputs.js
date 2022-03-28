@@ -136,6 +136,21 @@ export class Inputs extends Component {
                             this.props.changeCompanyFrom(e)
                         }}
                     />
+                    <input
+                        className="experience-to-input"
+                        type="text"
+                        id="toInput"
+                        placeholder="to"
+                        onFocus={(e) => {
+                            this.props.changeInputTypeIn(e)
+                        }}
+                        onBlur={(e) => {
+                            this.props.changeInputTypeOut(e)
+                        }}
+                        onChange={(e) => {
+                            this.props.changeCompanyTo(e)
+                        }}
+                    />
                 </div>
             </div>
         )
@@ -158,4 +173,5 @@ Inputs.propTypes = {
     changeInputTypeIn: PropTypes.func,
     changeInputTypeOut: PropTypes.func,
     changeCompanyFrom: PropTypes.func,
+    changeCompanyTo: PropTypes.func,
 }
