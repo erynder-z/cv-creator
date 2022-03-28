@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import uniqid from 'uniqid'
-import { Inputs } from './Inputs'
 import { PersonalInfo } from './PersonalInfo'
 import { WorkExperience } from './WorkExperience'
 import { Preview } from './Preview'
@@ -99,7 +98,7 @@ export class Main extends Component {
         const experience = this.state.experience
         return (
             <div className="main-wrapper">
-                <Inputs>
+                <div className="inputs ">
                     <PersonalInfo
                         changeFirstName={(e) => {
                             this.handleInput(e, 'firstName')
@@ -149,7 +148,7 @@ export class Main extends Component {
                             this.handleInputExperience(e, 'to')
                         }}
                     ></WorkExperience>
-                </Inputs>
+                </div>
                 <Preview personal={personal} experience={experience}></Preview>
             </div>
         )
