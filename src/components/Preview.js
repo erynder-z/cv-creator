@@ -7,7 +7,7 @@ export class Preview extends Component {
         super()
     }
     render() {
-        const { personal } = this.props
+        const { personal, experience } = this.props
         return (
             <div className="preview ">
                 <div className="personal-information-preview-top">
@@ -40,6 +40,10 @@ export class Preview extends Component {
                     <div className="title-preview">{personal.title}</div>
                     <h5>Description:</h5>
                     <div className="title-preview">{personal.description}</div>
+                    <h4>Experience</h4>
+                    <h5>Position</h5>
+                    {<div className="title-preview">{experience.position}</div>}
+                    <h4>Education</h4>
                 </div>
             </div>
         )
@@ -48,4 +52,5 @@ export class Preview extends Component {
 
 Preview.propTypes = {
     personal: PropTypes.object,
+    experience: PropTypes.object,
 }
