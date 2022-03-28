@@ -86,6 +86,18 @@ export class Inputs extends Component {
                         }}
                     ></input>
                 </div>
+                <div className="experience-input">
+                    <div>Experience</div>
+                    <input
+                        className="experience-position-input"
+                        type="text"
+                        id="positionInput"
+                        placeholder="position"
+                        onChange={(e) => {
+                            this.props.changePosition(e)
+                        }}
+                    />
+                </div>
             </div>
         )
     }
@@ -101,4 +113,5 @@ Inputs.propTypes = {
     changeEmail: PropTypes.func,
     changeDescription: PropTypes.func,
     uploadPic: PropTypes.func,
+    changePosition: PropTypes.func,
 }
