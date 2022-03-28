@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 /* import placeholder from '../assets/placeholder.png' */
 
 export class Preview extends Component {
-    constructor(props) {
+    constructor() {
         super()
     }
     render() {
@@ -37,8 +38,14 @@ export class Preview extends Component {
 
                 <div className="info-wrapper-preview">
                     <div className="title-preview">{personal.title}</div>
+                    <h5>Description:</h5>
+                    <div className="title-preview">{personal.description}</div>
                 </div>
             </div>
         )
     }
+}
+
+Preview.propTypes = {
+    personal: PropTypes.object,
 }
