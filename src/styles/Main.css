@@ -17,7 +17,7 @@
     min-height: 45vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(7, 1fr) 3fr 1fr;
+    grid-template-rows: repeat(8, 1fr) 3fr 1fr;
     padding: 1rem;
     gap: 1rem;
 }
