@@ -117,6 +117,9 @@ export class Main extends Component {
                     changePosition={(e) => {
                         this.handleInputExperience(e, 'position')
                     }}
+                    changeCompany={(e) => {
+                        this.handleInputExperience(e, 'company')
+                    }}
                 ></Inputs>
                 <Preview personal={personal} experience={experience}></Preview>
             </div>
