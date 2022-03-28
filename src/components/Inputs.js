@@ -106,6 +106,21 @@ export class Inputs extends Component {
                             this.props.changeCompany(e)
                         }}
                     />
+                    <input
+                        className="experience-from-input"
+                        type="text"
+                        id="fromInput"
+                        placeholder="from"
+                        onFocus={(e) => {
+                            this.props.changeInputTypeIn(e)
+                        }}
+                        onBlur={(e) => {
+                            this.props.changeInputTypeOut(e)
+                        }}
+                        onChange={(e) => {
+                            this.props.changeCompanyFrom(e)
+                        }}
+                    />
                 </div>
             </div>
         )
@@ -124,4 +139,7 @@ Inputs.propTypes = {
     uploadPic: PropTypes.func,
     changePosition: PropTypes.func,
     changeCompany: PropTypes.func,
+    changeInputTypeIn: PropTypes.func,
+    changeInputTypeOut: PropTypes.func,
+    changeCompanyFrom: PropTypes.func,
 }

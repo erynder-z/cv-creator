@@ -63,6 +63,14 @@ export class Main extends Component {
         }))
     }
 
+    changeInputToDate(e) {
+        e.target.type = 'date'
+    }
+
+    changeInputToText(e) {
+        e.target.type = 'text'
+    }
+
     uploadPicture(e) {
         let file = e.target.files[0]
         // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
@@ -119,6 +127,15 @@ export class Main extends Component {
                     }}
                     changeCompany={(e) => {
                         this.handleInputExperience(e, 'company')
+                    }}
+                    changeInputTypeIn={(e) => {
+                        this.changeInputToDate(e)
+                    }}
+                    changeInputTypeOut={(e) => {
+                        this.changeInputToText(e)
+                    }}
+                    changeCompanyFrom={(e) => {
+                        this.handleInputExperience(e, 'from')
                     }}
                 ></Inputs>
                 <Preview personal={personal} experience={experience}></Preview>
