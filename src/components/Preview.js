@@ -23,6 +23,10 @@ export class Preview extends Component {
                     </div>
                     <h4>Personal Info</h4>
                     <div className="title-preview">
+                        <h5>Date of birth:</h5>
+                        {personal.birthday}
+                    </div>
+                    <div className="title-preview">
                         <h5>Address:</h5>
                         {personal.address}
                     </div>
