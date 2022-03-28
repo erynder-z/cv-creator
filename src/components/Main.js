@@ -17,6 +17,7 @@ export class Main extends Component {
                 address: '',
                 phone: '',
                 email: '',
+                description: '',
                 picture: placeholder,
             },
         }
@@ -87,6 +88,9 @@ export class Main extends Component {
                     changeEmail={(e) => {
                         this.handleInput(e, 'email')
                     }}
+                    changeDescription={(e) => {
+                        this.handleInput(e, 'description')
+                    }}
                     uploadPic={(e) => {
                         this.uploadPicture(e)
                     }}
@@ -104,5 +108,6 @@ Main.propTypes = {
     address: PropTypes.string,
     phone: PropTypes.number,
     email: PropTypes.string,
+    description: PropTypes.string,
     picture: PropTypes.object,
 }
