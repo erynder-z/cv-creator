@@ -63,6 +63,40 @@ export class Main extends Component {
         }))
     }
 
+    /*   addExperienceInput(e, target) {
+        let key = `${target}`
+        const { experiences, experience } = this.state
+        this.setState(
+            (prevState) => ({
+                experiences: [...experiences, experience],
+                experience: {
+                    ...prevState.experience,
+                    [key]: e.target.value,
+                    id: this.state.experience.id,
+                },
+            }),
+            () => {
+                console.log(this.state)
+            }
+        )
+    } */
+
+    addExperienceInput() {
+        const { experiences, experience } = this.state
+        this.setState(
+            (prevState) => ({
+                experiences: [...experiences, experience],
+                experience: {
+                    ...prevState.experience,
+                    id: uniqid(),
+                },
+            }),
+            () => {
+                console.log(this.state.experiences.length)
+            }
+        )
+    }
+
     changeInputToDate(e) {
         e.target.type = 'date'
     }
@@ -93,13 +127,13 @@ export class Main extends Component {
     }
 
     render() {
-        const personal = this.state.personal
-        const experience = this.state.experience
+        /*         const personal = this.state.personal
+        const experience = this.state.experience */
         return (
             <div className="main-wrapper">
                 <Inputs
-                    /* {...this.state} */
-                    experiences={experience}
+                    {...this.state}
+                    /*  experiences={experience} */
                     changeFirstName={(e) => {
                         this.handleInput(e, 'firstName')
                     }}
@@ -150,7 +184,11 @@ export class Main extends Component {
                     }}
                 ></Inputs>
 
-                <Preview personal={personal} experience={experience}></Preview>
+                <Preview
+                    {...this.state}
+                    /*  personal={personal}
+                    experience={experience} */
+                ></Preview>
             </div>
         )
     }
