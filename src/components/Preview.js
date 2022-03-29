@@ -41,19 +41,26 @@ export class Preview extends Component {
                         {personal.email}
                     </div>
                 </div>
-                <div className="work-preview">
-                    <WorkExperiencePreview
-                        {...this.props}
-                    ></WorkExperiencePreview>
 
-                    {additionalExperienceItems.map((item) => {
-                        return (
-                            <WorkExperiencePreview
-                                key={item.id}
-                                {...this.props}
-                            ></WorkExperiencePreview>
-                        )
-                    })}
+                <div className="info-preview">
+                    <div className="title-preview">{personal.title}</div>
+                    <h5>Description:</h5>
+                    <div className="title-preview">{personal.description}</div>
+
+                    <div className="work-preview">
+                        <WorkExperiencePreview
+                            {...this.props}
+                        ></WorkExperiencePreview>
+
+                        {additionalExperienceItems.map((item) => {
+                            return (
+                                <WorkExperiencePreview
+                                    key={item.id}
+                                    {...this.props}
+                                ></WorkExperiencePreview>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         )
