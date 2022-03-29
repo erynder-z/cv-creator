@@ -60,6 +60,15 @@ export class WorkExperience extends Component {
                             this.props.changeCompanyTo(e)
                         }}
                     />
+                    <div
+                        className="addSection"
+                        onClick={(e) => {
+                            this.props.addInputFieldExperience(e)
+                        }}
+                    >
+                        Add section
+                    </div>
+                    <div className="removeSection">Remove section</div>
                 </div>
             </div>
         )
@@ -73,4 +82,7 @@ WorkExperience.propTypes = {
     changeInputTypeOut: PropTypes.func,
     changeCompanyFrom: PropTypes.func,
     changeCompanyTo: PropTypes.func,
+    addInputFieldExperience: PropTypes.func,
+    experiences: PropTypes.object,
+    addElement: PropTypes.func,
 }
