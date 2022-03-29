@@ -83,6 +83,6 @@ WorkExperience.propTypes = {
     changeCompanyFrom: PropTypes.func,
     changeCompanyTo: PropTypes.func,
     addInputFieldExperience: PropTypes.func,
-    experiences: PropTypes.object,
+    experiences: PropTypes.array,
     addElement: PropTypes.func,
 }
