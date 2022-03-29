@@ -1,6 +1,6 @@
 .main-wrapper {
     width: 100vw;
-    height: 93vh;
+    min-height: 93vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'inputs preview';
@@ -48,7 +48,7 @@
     grid-area: preview;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: 5rem repeat(9, 1fr);
     grid-template-areas:
         'up up up up'
         'cont cont cont person'
@@ -74,11 +74,20 @@
     grid-area: up;
 }
 
-.info-wrapper-preview {
-    background-color: rgb(199, 45, 45);
+.work-preview {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.info-preview {
     grid-area: cont;
+    background-color: rgb(199, 45, 45);
     padding: 1rem;
     overflow: auto;
+}
+
+.info-wrapper-preview {
 }
 
 .info-wrapper-preview > h4,
