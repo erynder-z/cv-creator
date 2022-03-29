@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-/* import placeholder from '../assets/placeholder.png' */
+import { WorkExperiencePreview } from './WorkExperiencePreview'
 
 export class Preview extends Component {
     constructor() {
         super()
     }
     render() {
-        const { personal, experience } = this.props
+        const { personal } = this.props
+        const additionalExperienceItems = this.props.experiences
+        console.log(additionalExperienceItems)
         return (
             <div className="preview ">
                 <div className="personal-information-preview-top">
@@ -39,21 +41,19 @@ export class Preview extends Component {
                         {personal.email}
                     </div>
                 </div>
+                <div className="work-preview">
+                    <WorkExperiencePreview
+                        {...this.props}
+                    ></WorkExperiencePreview>
 
-                <div className="info-wrapper-preview">
-                    <div className="title-preview">{personal.title}</div>
-                    <h5>Description:</h5>
-                    <div className="title-preview">{personal.description}</div>
-                    <h4>Experience</h4>
-                    <h5>Position</h5>
-                    {<div className="title-preview">{experience.position}</div>}
-                    <h5>Company</h5>
-                    {<div className="title-preview">{experience.company}</div>}
-                    <h5>From</h5>
-                    {<div className="title-preview">{experience.to}</div>}
-                    <h5>To</h5>
-                    {<div className="title-preview">{experience.from}</div>}
-                    <h4>Education</h4>
+                    {additionalExperienceItems.map((item) => {
+                        return (
+                            <WorkExperiencePreview
+                                key={item.id}
+                                {...this.props}
+                            ></WorkExperiencePreview>
+                        )
+                    })}
                 </div>
             </div>
         )
@@ -63,4 +63,5 @@ export class Preview extends Component {
 Preview.propTypes = {
     personal: PropTypes.object,
     experience: PropTypes.object,
+    experiences: PropTypes.array,
 }
