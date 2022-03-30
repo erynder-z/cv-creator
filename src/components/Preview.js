@@ -8,8 +8,7 @@ export class Preview extends Component {
     }
     render() {
         const { personal } = this.props
-        const additionalExperienceItems = this.props.experiences
-        console.log(additionalExperienceItems)
+        /* const additionalExperienceItems = this.props.experiences */
         return (
             <div className="preview ">
                 <div className="personal-information-preview-top">
@@ -48,18 +47,35 @@ export class Preview extends Component {
                     <div className="title-preview">{personal.description}</div>
 
                     <div className="work-preview">
-                        <WorkExperiencePreview
-                            {...this.props}
-                        ></WorkExperiencePreview>
-
-                        {additionalExperienceItems.map((item) => {
+                        {this.props.experiences.map((item) => {
+                            return (
+                                <WorkExperiencePreview
+                                    key={item.id}
+                                    id={item.id}
+                                    position={item.position}
+                                    company={item.company}
+                                    from={item.from}
+                                    to={item.to}
+                                ></WorkExperiencePreview>
+                            )
+                        })}
+                        {/*   {additionalExperienceItems.map((item) => {
                             return (
                                 <WorkExperiencePreview
                                     key={item.id}
                                     {...this.props}
                                 ></WorkExperiencePreview>
                             )
-                        })}
+                        })} */}
+                        <WorkExperiencePreview
+                            key={this.props.experience.id}
+                            /* {...this.props} */
+                            id={this.props.experience.id}
+                            position={this.props.experience.position}
+                            company={this.props.experience.company}
+                            from={this.props.experience.from}
+                            to={this.props.experience.to}
+                        ></WorkExperiencePreview>
                     </div>
                 </div>
             </div>
