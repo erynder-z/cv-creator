@@ -42,6 +42,31 @@ export class Main extends Component {
         }))
     }
 
+    handleInputExperience(e, id, target) {
+        let key = `${target}`
+        /*     console.log(id) */
+
+        if (id === this.state.experience.id) {
+            this.setState((prevState) => ({
+                experience: {
+                    ...prevState.experience,
+                    [key]: e.target.value,
+                    id: this.state.experience.id,
+                },
+            }))
+        } else {
+            this.setState((prevState) => ({
+                experiences: prevState.experiences.map((obj) =>
+                    obj.id === id
+                        ? Object.assign(obj, {
+                              [key]: e.target.value,
+                          })
+                        : obj
+                ),
+            }))
+        }
+    }
+
     /*     handleFirstNameInput(e) {
         this.setState((prevState) => ({
             personal: {
@@ -52,7 +77,7 @@ export class Main extends Component {
         }))
     } */
 
-    handleInputExperience(e, id, target) {
+    /* handleInputExperience(e, id, target) {
         let key = `${target}`
         this.setState((prevState) => ({
             experience: {
@@ -61,7 +86,7 @@ export class Main extends Component {
                 id: this.state.experience.id,
             },
         }))
-    }
+    } */
 
     /*   addExperienceInput(e, target) {
         let key = `${target}`
@@ -83,18 +108,16 @@ export class Main extends Component {
 
     addExperienceInput() {
         const { experiences, experience } = this.state
-        this.setState(
-            (prevState) => ({
-                experiences: [...experiences, experience],
-                experience: {
-                    ...prevState.experience,
-                    id: uniqid(),
-                },
-            }),
-            () => {
-                console.log(this.state.experiences.length)
-            }
-        )
+        this.setState(() => ({
+            experiences: [...experiences, experience],
+            experience: {
+                id: uniqid(),
+                position: '',
+                company: '',
+                from: '',
+                to: '',
+            },
+        }))
     }
 
     changeInputToDate(e) {
