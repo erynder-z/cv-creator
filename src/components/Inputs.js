@@ -16,7 +16,7 @@ export class Inputs extends Component {
         return (
             <div className="inputs ">
                 <PersonalInfo {...this.props}></PersonalInfo>
-                <WorkExperience {...this.props}></WorkExperience>
+
                 {additionalExperienceItems.map((item) => {
                     return (
                         <WorkExperience
@@ -25,6 +25,10 @@ export class Inputs extends Component {
                         ></WorkExperience>
                     )
                 })}
+                <WorkExperience
+                    key={this.props.experience.id}
+                    {...this.props}
+                ></WorkExperience>
             </div>
         )
     }
@@ -32,4 +36,5 @@ export class Inputs extends Component {
 
 Inputs.propTypes = {
     experiences: PropTypes.array,
+    experience: PropTypes.object,
 }
