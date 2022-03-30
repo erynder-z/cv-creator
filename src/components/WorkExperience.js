@@ -8,6 +8,7 @@ export class WorkExperience extends Component {
     }
 
     render() {
+        const id = this._reactInternals.key
         return (
             <div className="inputs ">
                 <div className="experience-input">
@@ -18,7 +19,9 @@ export class WorkExperience extends Component {
                         id="positionInput"
                         placeholder="position"
                         onChange={(e) => {
-                            this.props.changePosition(e)
+                            /* const id = this._reactInternals.key */
+
+                            this.props.changePosition(e, id)
                         }}
                     />
                     <input
@@ -27,7 +30,7 @@ export class WorkExperience extends Component {
                         id="companyInput"
                         placeholder="company"
                         onChange={(e) => {
-                            this.props.changeCompany(e)
+                            this.props.changeCompany(e, id)
                         }}
                     />
                     <input
@@ -36,13 +39,13 @@ export class WorkExperience extends Component {
                         id="fromInput"
                         placeholder="from"
                         onFocus={(e) => {
-                            this.props.changeInputTypeIn(e)
+                            this.props.changeInputTypeIn(e, id)
                         }}
                         onBlur={(e) => {
-                            this.props.changeInputTypeOut(e)
+                            this.props.changeInputTypeOut(e, id)
                         }}
                         onChange={(e) => {
-                            this.props.changeCompanyFrom(e)
+                            this.props.changeCompanyFrom(e, id)
                         }}
                     />
                     <input
@@ -51,19 +54,19 @@ export class WorkExperience extends Component {
                         id="toInput"
                         placeholder="to"
                         onFocus={(e) => {
-                            this.props.changeInputTypeIn(e)
+                            this.props.changeInputTypeIn(e, id)
                         }}
                         onBlur={(e) => {
-                            this.props.changeInputTypeOut(e)
+                            this.props.changeInputTypeOut(e, id)
                         }}
                         onChange={(e) => {
-                            this.props.changeCompanyTo(e)
+                            this.props.changeCompanyTo(e, id)
                         }}
                     />
                     <div
                         className="addSection"
                         onClick={(e) => {
-                            this.props.addInputFieldExperience(e)
+                            this.props.addInputFieldExperience(e, id)
                         }}
                     >
                         Add section
@@ -84,5 +87,6 @@ WorkExperience.propTypes = {
     changeCompanyTo: PropTypes.func,
     addInputFieldExperience: PropTypes.func,
     experiences: PropTypes.array,
+    experience: PropTypes.object,
     addElement: PropTypes.func,
 }
