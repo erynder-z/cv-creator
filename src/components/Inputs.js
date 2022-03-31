@@ -28,7 +28,7 @@ export class Inputs extends Component {
                 })}
                 <WorkExperience
                     key={this.props.experience.id}
-                    isHidden={false}
+                    bottomItem={true}
                     {...this.props}
                 ></WorkExperience>
             </div>
