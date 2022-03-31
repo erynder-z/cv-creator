@@ -105,3 +105,11 @@
     height: 10rem;
     width: auto;
 }
+
+.experience-wrapper {
+    margin-bottom: 1rem;
+}
+
+.experience-wrapper > h5 {
+    margin-bottom: 0.5rem;
+}
