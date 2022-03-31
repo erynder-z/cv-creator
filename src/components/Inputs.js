@@ -21,12 +21,14 @@ export class Inputs extends Component {
                         <WorkExperience
                             key={item.id}
                             sectionValues={item}
+                            isHidden={true}
                             {...this.props}
                         ></WorkExperience>
                     )
                 })}
                 <WorkExperience
                     key={this.props.experience.id}
+                    isHidden={false}
                     {...this.props}
                 ></WorkExperience>
             </div>
