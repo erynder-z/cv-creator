@@ -12,7 +12,6 @@ export class Inputs extends Component {
 
     render() {
         const additionalExperienceItems = this.props.experiences
-
         return (
             <div className="inputs ">
                 <PersonalInfo {...this.props}></PersonalInfo>
@@ -21,6 +20,7 @@ export class Inputs extends Component {
                     return (
                         <WorkExperience
                             key={item.id}
+                            sectionValues={item}
                             {...this.props}
                         ></WorkExperience>
                     )
