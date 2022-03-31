@@ -120,6 +120,14 @@ export class Main extends Component {
         }))
     }
 
+    removeExperienceInput(e, id) {
+        this.setState({
+            experiences: this.state.experiences.filter(function (item) {
+                return item.id !== id
+            }),
+        })
+    }
+
     changeInputToDate(e) {
         e.target.type = 'date'
     }
@@ -204,6 +212,9 @@ export class Main extends Component {
                     }}
                     addInputFieldExperience={(e) => {
                         this.addExperienceInput(e)
+                    }}
+                    removeInputFieldExperience={(e, id) => {
+                        this.removeExperienceInput(e, id)
                     }}
                 ></Inputs>
 
