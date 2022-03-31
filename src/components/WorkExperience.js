@@ -85,7 +85,14 @@ export class WorkExperience extends Component {
                     >
                         Add section
                     </div>
-                    <div className="removeSection">Remove section</div>
+                    <div
+                        className="removeSection"
+                        onClick={(e) => {
+                            this.props.removeInputFieldExperience(e, id)
+                        }}
+                    >
+                        Remove section
+                    </div>
                 </div>
             </div>
         )
@@ -106,4 +113,5 @@ WorkExperience.propTypes = {
     itemValues: PropTypes.object,
     sectionValues: PropTypes.object,
     isHidden: PropTypes.bool,
+    removeInputFieldExperience: PropTypes.func,
 }
