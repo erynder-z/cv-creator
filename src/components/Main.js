@@ -58,7 +58,7 @@ export class Main extends Component {
             this.setState((prevState) => ({
                 experiences: prevState.experiences.map((obj) =>
                     obj.id === id
-                        ? Object.assign(obj, {
+                        ? Object.assign({}, obj, {
                               [key]: e.target.value,
                           })
                         : obj
