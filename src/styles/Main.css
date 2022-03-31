@@ -113,3 +113,7 @@
 .experience-wrapper > h5 {
     margin-bottom: 0.5rem;
 }
+
+.hidden {
+    display: none;
+}
