@@ -9,6 +9,13 @@ export class WorkExperience extends Component {
 
     render() {
         const id = this._reactInternals.key
+        let sectionItem
+        if (this.props.sectionValues === undefined) {
+            sectionItem = this.props.experience
+        } else {
+            sectionItem = this.props.sectionValues
+        }
+
         return (
             <div className="inputs ">
                 <div className="experience-input">
@@ -18,6 +25,7 @@ export class WorkExperience extends Component {
                         type="text"
                         id="positionInput"
                         placeholder="position"
+                        value={sectionItem.position}
                         onChange={(e) => {
                             /* const id = this._reactInternals.key */
 
@@ -29,6 +37,7 @@ export class WorkExperience extends Component {
                         type="text"
                         id="companyInput"
                         placeholder="company"
+                        value={sectionItem.company}
                         onChange={(e) => {
                             this.props.changeCompany(e, id)
                         }}
@@ -38,6 +47,7 @@ export class WorkExperience extends Component {
                         type="text"
                         id="fromInput"
                         placeholder="from"
+                        value={sectionItem.from}
                         onFocus={(e) => {
                             this.props.changeInputTypeIn(e, id)
                         }}
@@ -53,6 +63,7 @@ export class WorkExperience extends Component {
                         type="text"
                         id="toInput"
                         placeholder="to"
+                        value={sectionItem.to}
                         onFocus={(e) => {
                             this.props.changeInputTypeIn(e, id)
                         }}
@@ -89,4 +100,6 @@ WorkExperience.propTypes = {
     experiences: PropTypes.array,
     experience: PropTypes.object,
     addElement: PropTypes.func,
+    itemValues: PropTypes.object,
+    sectionValues: PropTypes.object,
 }
