@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-/* import uniqid from 'uniqid' */
 import PropTypes from 'prop-types'
 import { PersonalInfo } from './PersonalInfo'
 import { WorkExperience } from './WorkExperience'
+import { Education } from './Education'
 
 export class Inputs extends Component {
     constructor(props) {
@@ -12,6 +12,7 @@ export class Inputs extends Component {
 
     render() {
         const additionalExperienceItems = this.props.experiences
+        const additionalEducationItems = this.props.educations
         return (
             <div className="inputs ">
                 <PersonalInfo {...this.props}></PersonalInfo>
@@ -31,6 +32,22 @@ export class Inputs extends Component {
                     bottomItem={true}
                     {...this.props}
                 ></WorkExperience>
+
+                {additionalEducationItems.map((item) => {
+                    return (
+                        <Education
+                            key={item.id}
+                            sectionValues={item}
+                            isHidden={true}
+                            {...this.props}
+                        ></Education>
+                    )
+                })}
+                <Education
+                    key={this.props.education.id}
+                    bottomItem={true}
+                    {...this.props}
+                ></Education>
             </div>
         )
     }
@@ -39,4 +56,6 @@ export class Inputs extends Component {
 Inputs.propTypes = {
     experiences: PropTypes.array,
     experience: PropTypes.object,
+    educations: PropTypes.array,
+    education: PropTypes.object,
 }
