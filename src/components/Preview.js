@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { WorkExperiencePreview } from './WorkExperiencePreview'
+import { EducationPreview } from './EducationPreview'
 
 export class Preview extends Component {
     constructor() {
@@ -77,6 +78,33 @@ export class Preview extends Component {
                             to={this.props.experience.to}
                         ></WorkExperiencePreview>
                     </div>
+
+                    <div className="education-preview">
+                        {this.props.educations.map((item) => {
+                            return (
+                                <EducationPreview
+                                    key={item.id}
+                                    id={item.id}
+                                    institution={item.institution}
+                                    city={item.city}
+                                    degree={item.degree}
+                                    major={item.major}
+                                    from={item.from}
+                                    to={item.to}
+                                ></EducationPreview>
+                            )
+                        })}
+                        <EducationPreview
+                            key={this.props.education.id}
+                            id={this.props.education.id}
+                            institution={this.props.education.institution}
+                            city={this.props.education.city}
+                            degree={this.props.education.degree}
+                            major={this.props.education.major}
+                            from={this.props.education.from}
+                            to={this.props.education.to}
+                        ></EducationPreview>
+                    </div>
                 </div>
             </div>
         )
@@ -87,4 +115,6 @@ Preview.propTypes = {
     personal: PropTypes.object,
     experience: PropTypes.object,
     experiences: PropTypes.array,
+    education: PropTypes.object,
+    educations: PropTypes.array,
 }
