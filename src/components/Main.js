@@ -28,6 +28,16 @@ export class Main extends Component {
                 to: '',
             },
             experiences: [],
+            education: {
+                id: uniqid(),
+                institution: '',
+                city: '',
+                degree: '',
+                major: '',
+                from: '',
+                to: '',
+            },
+            educations: [],
         }
     }
 
@@ -83,6 +93,54 @@ export class Main extends Component {
     removeExperienceInput(e, id) {
         this.setState({
             experiences: this.state.experiences.filter(function (item) {
+                return item.id !== id
+            }),
+        })
+    }
+
+    handleInputEducation(e, id, target) {
+        let key = `${target}`
+
+        if (id === this.state.education.id) {
+            this.setState((prevState) => ({
+                education: {
+                    ...prevState.education,
+                    [key]: e.target.value,
+                    id: this.state.education.id,
+                },
+            }))
+        } else {
+            this.setState((prevState) => ({
+                educations: prevState.educations.map((obj) =>
+                    obj.id === id
+                        ? Object.assign({}, obj, {
+                              [key]: e.target.value,
+                          })
+                        : obj
+                ),
+            }))
+        }
+    }
+
+    addEducationInput() {
+        const { educations, education } = this.state
+        this.setState(() => ({
+            educations: [...educations, education],
+            education: {
+                id: uniqid(),
+                institution: '',
+                city: '',
+                degree: '',
+                major: '',
+                from: '',
+                to: '',
+            },
+        }))
+    }
+
+    removeEducationInput(e, id) {
+        this.setState({
+            educations: this.state.educations.filter(function (item) {
                 return item.id !== id
             }),
         })
@@ -173,6 +231,30 @@ export class Main extends Component {
                     }}
                     removeInputFieldExperience={(e, id) => {
                         this.removeExperienceInput(e, id)
+                    }}
+                    changeInstitution={(e, id) => {
+                        this.handleInputEducation(e, id, 'institution')
+                    }}
+                    changeCity={(e, id) => {
+                        this.handleInputEducation(e, id, 'city')
+                    }}
+                    changeDegree={(e, id) => {
+                        this.handleInputEducation(e, id, 'degree')
+                    }}
+                    changeMajor={(e, id) => {
+                        this.handleInputEducation(e, id, 'major')
+                    }}
+                    changeEducationFrom={(e, id) => {
+                        this.handleInputEducation(e, id, 'from')
+                    }}
+                    changeEducationTo={(e, id) => {
+                        this.handleInputEducation(e, id, 'to')
+                    }}
+                    addInputFieldEducation={(e) => {
+                        this.addEducationInput(e)
+                    }}
+                    removeInputFieldEducation={(e, id) => {
+                        this.removeEducationInput(e, id)
                     }}
                 ></Inputs>
 
