@@ -89,13 +89,16 @@ export class PersonalInfo extends Component {
                         this.props.changeDescription(e)
                     }}
                 />
-                <label htmlFor="picture">Choose a profile picture:</label>
+                <label htmlFor="picture" className="custom-file-upload-label">
+                    Change picture
+                </label>
                 <input
+                    className="custom-file-upload"
                     type="file"
                     id="picture"
                     name="picture"
                     accept="image/png, image/jpeg"
-                    onChange={(e) => {
+                    onClick={(e) => {
                         this.props.uploadPic(e)
                     }}
                 ></input>
