@@ -22,7 +22,8 @@
     gap: 1rem;
 }
 
-.experience-input {
+.experience-input,
+.education-input {
     background-color: beige;
     margin: 1rem;
     /*  min-height: 45vh; */
@@ -75,10 +76,11 @@
     grid-area: up;
 }
 
-.work-preview {
+.work-preview,
+.education-preview {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    /*  min-height: 100%; */
 }
 
 .info-preview {
@@ -107,11 +109,13 @@
     width: auto;
 }
 
-.experience-wrapper {
+.experience-wrapper,
+.education-wrapper {
     margin-bottom: 1rem;
 }
 
-.experience-wrapper > h5 {
+.experience-wrapper > h5,
+.education-wrapper > h5 {
     margin-bottom: 0.5rem;
 }
 
