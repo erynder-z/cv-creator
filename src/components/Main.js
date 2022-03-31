@@ -44,7 +44,6 @@ export class Main extends Component {
 
     handleInputExperience(e, id, target) {
         let key = `${target}`
-        /*     console.log(id) */
 
         if (id === this.state.experience.id) {
             this.setState((prevState) => ({
@@ -66,45 +65,6 @@ export class Main extends Component {
             }))
         }
     }
-
-    /*     handleFirstNameInput(e) {
-        this.setState((prevState) => ({
-            personal: {
-                ...prevState.personal,
-                firstName: e.target.value,
-                id: this.state.personal.id,
-            },
-        }))
-    } */
-
-    /* handleInputExperience(e, id, target) {
-        let key = `${target}`
-        this.setState((prevState) => ({
-            experience: {
-                ...prevState.experience,
-                [key]: e.target.value,
-                id: this.state.experience.id,
-            },
-        }))
-    } */
-
-    /*   addExperienceInput(e, target) {
-        let key = `${target}`
-        const { experiences, experience } = this.state
-        this.setState(
-            (prevState) => ({
-                experiences: [...experiences, experience],
-                experience: {
-                    ...prevState.experience,
-                    [key]: e.target.value,
-                    id: this.state.experience.id,
-                },
-            }),
-            () => {
-                console.log(this.state)
-            }
-        )
-    } */
 
     addExperienceInput() {
         const { experiences, experience } = this.state
@@ -158,8 +118,6 @@ export class Main extends Component {
     }
 
     render() {
-        /*         const personal = this.state.personal
-        const experience = this.state.experience */
         return (
             <div className="main-wrapper">
                 <Inputs
@@ -218,11 +176,7 @@ export class Main extends Component {
                     }}
                 ></Inputs>
 
-                <Preview
-                    {...this.state}
-                    /*  personal={personal}
-                    experience={experience} */
-                ></Preview>
+                <Preview {...this.state}></Preview>
             </div>
         )
     }
