@@ -1,9 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .main-wrapper {
-    width: 100vw;
+    max-width: 100vw;
+}
+
+.main-wrapper {
+    /* width: 100vw; */
     min-height: 93vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-areas: 'inputs preview';
+    font-family: 'Roboto', sans-serif;
 }
 
 .inputs {
@@ -39,6 +58,26 @@
     height: 2rem;
     width: 100%;
     background-color: rgb(255, 0, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.options-input {
+    background-color: beige;
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.sample-button {
+    height: 2rem;
+    width: 100%;
+    background-color: rgb(0, 153, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +141,7 @@
     background-color: rgb(114, 173, 250);
     grid-area: person;
     padding: 1rem;
-    max-width: 15vw;
+    /*   max-width: 15vw; */
 }
 .picture > img {
     height: 10rem;
