@@ -182,7 +182,7 @@ export class Main extends Component {
                 id: 'sample',
                 firstName: 'Jean',
                 lastName: 'Dupont',
-                birthday: '31-12.1990',
+                birthday: '1990-12-31',
                 title: 'Web Developer',
                 address: '123 Fake Street',
                 phone: '+33 1 499 123',
@@ -215,6 +215,41 @@ export class Main extends Component {
                 major: 'Computer Science',
                 from: '2010',
                 to: '2013',
+            },
+            educations: [],
+        })
+    }
+
+    clearData() {
+        this.setState({
+            personal: {
+                id: uniqid(),
+                firstName: '',
+                lastName: '',
+                birthday: '',
+                title: '',
+                address: '',
+                phone: '',
+                email: '',
+                description: '',
+                picture: placeholder,
+            },
+            experience: {
+                id: uniqid(),
+                position: '',
+                company: '',
+                from: '',
+                to: '',
+            },
+            experiences: [],
+            education: {
+                id: uniqid(),
+                institution: '',
+                city: '',
+                degree: '',
+                major: '',
+                from: '',
+                to: '',
             },
             educations: [],
         })
@@ -303,6 +338,9 @@ export class Main extends Component {
                     }}
                     getSample={() => {
                         this.loadSample()
+                    }}
+                    resetData={() => {
+                        this.clearData()
                     }}
                 ></Inputs>
 
