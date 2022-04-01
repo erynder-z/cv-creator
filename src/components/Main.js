@@ -3,6 +3,7 @@ import uniqid from 'uniqid'
 import { Inputs } from './Inputs'
 import { Preview } from './Preview'
 import placeholder from '../assets/placeholder.png'
+import samplePic from '../assets/napoleon.jpg'
 
 export class Main extends Component {
     constructor() {
@@ -175,6 +176,50 @@ export class Main extends Component {
         reader.readAsDataURL(file)
     }
 
+    loadSample() {
+        this.setState({
+            personal: {
+                id: 'sample',
+                firstName: 'Jean',
+                lastName: 'Dupont',
+                birthday: '31-12.1990',
+                title: 'Web Developer',
+                address: '123 Fake Street',
+                phone: '+33 1 499 123',
+                email: 'me@example.com',
+                description:
+                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugit quod doloremque, aut fuga iusto commodi officiis maiores ducimus non!',
+                picture: samplePic,
+            },
+            experience: {
+                id: 'sampleExp2',
+                position: 'Junior Web Developer',
+                company: 'Vaprorcomp Inc.',
+                from: '2013',
+                to: '2015',
+            },
+            experiences: [
+                {
+                    id: 'sampleExp',
+                    position: 'Senior Web Developer',
+                    company: 'Flancrest Enterprises ',
+                    from: '2015',
+                    to: 'current',
+                },
+            ],
+            education: {
+                id: 'sampleEdu',
+                institution: 'Ludwig Maximilian University',
+                city: 'Munich, Germany',
+                degree: 'Bachelor of Science',
+                major: 'Computer Science',
+                from: '2010',
+                to: '2013',
+            },
+            educations: [],
+        })
+    }
+
     render() {
         return (
             <div className="main-wrapper">
@@ -255,6 +300,9 @@ export class Main extends Component {
                     }}
                     removeInputFieldEducation={(e, id) => {
                         this.removeEducationInput(e, id)
+                    }}
+                    getSample={() => {
+                        this.loadSample()
                     }}
                 ></Inputs>
 
