@@ -34,7 +34,7 @@ export class PersonalInfo extends Component {
                 />
                 <input
                     className="birthday-input"
-                    type="text"
+                    type="date"
                     id="birthdayInput"
                     placeholder="birthday"
                     value={personal.birthday}
