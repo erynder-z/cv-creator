@@ -20,6 +20,14 @@ export class FormOptions extends Component {
                     >
                         Load Sample
                     </div>
+                    <div
+                        className={'reset-button'}
+                        onClick={() => {
+                            this.props.resetData()
+                        }}
+                    >
+                        Reset data
+                    </div>
                 </div>
             </div>
         )
@@ -28,4 +36,5 @@ export class FormOptions extends Component {
 
 FormOptions.propTypes = {
     getSample: PropTypes.func,
+    resetData: PropTypes.func,
 }
