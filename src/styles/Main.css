@@ -83,7 +83,15 @@ body {
     align-items: center;
     cursor: pointer;
 }
-
+.reset-button {
+    height: 2rem;
+    width: 100%;
+    background-color: rgb(255, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 .preview {
     background-color: rgb(226, 182, 152);
     grid-area: preview;
