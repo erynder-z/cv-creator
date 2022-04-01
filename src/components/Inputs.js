@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { PersonalInfo } from './PersonalInfo'
 import { WorkExperience } from './WorkExperience'
 import { Education } from './Education'
+import { FormOptions } from './FormOptions'
 
 export class Inputs extends Component {
     constructor(props) {
@@ -48,6 +49,7 @@ export class Inputs extends Component {
                     bottomItem={true}
                     {...this.props}
                 ></Education>
+                <FormOptions {...this.props}></FormOptions>
             </div>
         )
     }
