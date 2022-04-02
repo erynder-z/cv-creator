@@ -15,25 +15,25 @@ export class WorkExperiencePreview extends Component {
                     return (
                         <div key={item.id} className="experience-preview">
                             <h5>Position</h5>
-                            {item.position}
+                            <div className="preview-item">{item.position}</div>
                             <h5>Company</h5>
-                            {item.company}
+                            <div className="preview-item">{item.company}</div>
                             <h5>From</h5>
-                            {item.from}
+                            <div className="preview-item">{item.from}</div>
                             <h5>To</h5>
-                            {item.to}
+                            <div className="preview-item">{item.to}</div>
                         </div>
                     )
                 })}
                 <div className="experience-preview">
                     <h5>Position</h5>
-                    {experience.position}
+                    <div className="preview-item">{experience.position}</div>
                     <h5>Company</h5>
-                    {experience.company}
+                    <div className="preview-item">{experience.position}</div>
                     <h5>From</h5>
-                    {experience.from}
+                    <div className="preview-item">{experience.position}</div>
                     <h5>To</h5>
-                    {experience.to}
+                    <div className="preview-item">{experience.position}</div>
                 </div>
             </div>
         )
