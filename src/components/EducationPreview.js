@@ -15,35 +15,35 @@ export class EducationPreview extends Component {
                     return (
                         <div key={item.id} className="education-preview">
                             <h5>Institution</h5>
-                            <div className="title-preview">
+                            <div className="preview-item">
                                 {item.institution}
                             </div>
                             <h5>City</h5>
-                            <div className="title-preview">{item.city}</div>
+                            <div className="preview-item">{item.city}</div>
                             <h5>Degree</h5>
-                            <div className="title-preview">{item.degree}</div>
+                            <div className="preview-item">{item.degree}</div>
                             <h5>Major</h5>
-                            <div className="title-preview">{item.major}</div>
+                            <div className="preview-item">{item.major}</div>
                             <h5>From</h5>
-                            <div className="title-preview">{item.from}</div>
+                            <div className="preview-item">{item.from}</div>
                             <h5>To</h5>
-                            <div className="title-preview">{item.to}</div>
+                            <div className="preview-item">{item.to}</div>
                         </div>
                     )
                 })}
                 <div className="education-preview">
                     <h5>Institution</h5>
-                    <div className="title-preview">{education.institution}</div>
+                    <div className="preview-item">{education.institution}</div>
                     <h5>City</h5>
-                    <div className="title-preview">{education.city}</div>
+                    <div className="preview-itemw">{education.city}</div>
                     <h5>Degree</h5>
-                    <div className="title-preview">{education.degree}</div>
+                    <div className="preview-itemw">{education.degree}</div>
                     <h5>Major</h5>
-                    <div className="title-preview">{education.major}</div>
+                    <div className="preview-item">{education.major}</div>
                     <h5>From</h5>
-                    <div className="title-preview">{education.from}</div>
+                    <div className="preview-item">{education.from}</div>
                     <h5>To</h5>
-                    <div className="title-preview">{education.to}</div>
+                    <div className="preview-item">{education.to}</div>
                 </div>
             </div>
         )
