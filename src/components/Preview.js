@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { WorkExperiencePreview } from './WorkExperiencePreview'
 import { EducationPreview } from './EducationPreview'
+import { SkillsPreview } from './SkillsPreview'
 
 export class Preview extends Component {
     constructor() {
@@ -24,28 +25,30 @@ export class Preview extends Component {
                         <img src={personal.picture} alt="Test" />
                     </div>
                     <h4>Personal Info</h4>
-                    <div className="title-preview">
+                    <div className="personal-preview">
                         <h5>Date of birth:</h5>
                         {personal.birthday}
                     </div>
-                    <div className="title-preview">
+                    <div className="personal-preview">
                         <h5>Address:</h5>
                         {personal.address}
                     </div>
-                    <div className="title-preview">
+                    <div className="personal-preview">
                         <h5>Phone:</h5>
                         {personal.phone}
                     </div>
-                    <div className="title-preview">
+                    <div className="personal-preview">
                         <h5>Email:</h5>
                         {personal.email}
                     </div>
                 </div>
 
                 <div className="info-preview">
-                    <div className="title-preview">{personal.title}</div>
+                    <div className="personal-preview">{personal.title}</div>
                     <h5>Description:</h5>
-                    <div className="title-preview">{personal.description}</div>
+                    <div className="personal-preview">
+                        {personal.description}
+                    </div>
 
                     <div className="work-preview">
                         {this.props.experiences.map((item) => {
@@ -105,6 +108,15 @@ export class Preview extends Component {
                             to={this.props.education.to}
                         ></EducationPreview>
                     </div>
+
+                    <div className="skills-preview">
+                        <SkillsPreview
+                            key={this.props.skill.id}
+                            id={this.props.skill.id}
+                            name={this.props.skill.name}
+                            {...this.props}
+                        ></SkillsPreview>
+                    </div>
                 </div>
             </div>
         )
@@ -117,4 +129,6 @@ Preview.propTypes = {
     experiences: PropTypes.array,
     education: PropTypes.object,
     educations: PropTypes.array,
+    skill: PropTypes.object,
+    skills: PropTypes.array,
 }
