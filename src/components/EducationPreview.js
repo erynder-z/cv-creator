@@ -14,36 +14,48 @@ export class EducationPreview extends Component {
                 {this.props.educations.map((item) => {
                     return (
                         <div key={item.id} className="education-preview">
-                            <h5>Institution</h5>
-                            <div className="preview-item">
-                                {item.institution}
+                            <div className="fromto-wrapper">
+                                <h5>From</h5>
+                                <div className="preview-item">{item.from}</div>
+                                <h5>To</h5>
+                                <div className="preview-item">{item.to}</div>
                             </div>
-                            <h5>City</h5>
-                            <div className="preview-item">{item.city}</div>
-                            <h5>Degree</h5>
-                            <div className="preview-item">{item.degree}</div>
-                            <h5>Major</h5>
-                            <div className="preview-item">{item.major}</div>
-                            <h5>From</h5>
-                            <div className="preview-item">{item.from}</div>
-                            <h5>To</h5>
-                            <div className="preview-item">{item.to}</div>
+                            <div className="item-wrapper">
+                                <h5>Institution</h5>
+                                <div className="preview-item">
+                                    {item.institution}
+                                </div>
+                                <h5>City</h5>
+                                <div className="preview-item">{item.city}</div>
+                                <h5>Degree</h5>
+                                <div className="preview-item">
+                                    {item.degree}
+                                </div>
+                                <h5>Major</h5>
+                                <div className="preview-item">{item.major}</div>
+                            </div>
                         </div>
                     )
                 })}
                 <div className="education-preview">
-                    <h5>Institution</h5>
-                    <div className="preview-item">{education.institution}</div>
-                    <h5>City</h5>
-                    <div className="preview-itemw">{education.city}</div>
-                    <h5>Degree</h5>
-                    <div className="preview-itemw">{education.degree}</div>
-                    <h5>Major</h5>
-                    <div className="preview-item">{education.major}</div>
-                    <h5>From</h5>
-                    <div className="preview-item">{education.from}</div>
-                    <h5>To</h5>
-                    <div className="preview-item">{education.to}</div>
+                    <div className="fromto-wapper">
+                        <h5>From</h5>
+                        <div className="preview-item">{education.from}</div>
+                        <h5>To</h5>
+                        <div className="preview-item">{education.to}</div>
+                    </div>
+                    <div className="item-wrapper">
+                        <h5>Institution</h5>
+                        <div className="preview-item">
+                            {education.institution}
+                        </div>
+                        <h5>City</h5>
+                        <div className="preview-itemw">{education.city}</div>
+                        <h5>Degree</h5>
+                        <div className="preview-itemw">{education.degree}</div>
+                        <h5>Major</h5>
+                        <div className="preview-item">{education.major}</div>
+                    </div>
                 </div>
             </div>
         )
