@@ -6,18 +6,18 @@ export class WorkExperiencePreview extends Component {
         super(props)
     }
     render() {
-        /*  const { experience } = this.props */
+        const experience = this.props
         return (
             <div className="experience-wrapper">
                 <h4>Experience</h4>
                 <h5>Position</h5>
-                <div className="title-preview">{this.props.position}</div>
+                <div className="title-preview">{experience.position}</div>
                 <h5>Company</h5>
-                <div className="title-preview">{this.props.company}</div>
+                <div className="title-preview">{experience.company}</div>
                 <h5>From</h5>
-                <div className="title-preview">{this.props.from}</div>
+                <div className="title-preview">{experience.from}</div>
                 <h5>To</h5>
-                <div className="title-preview">{this.props.to}</div>
+                <div className="title-preview">{experience.to}</div>
             </div>
         )
     }
