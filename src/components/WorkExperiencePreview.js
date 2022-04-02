@@ -14,26 +14,40 @@ export class WorkExperiencePreview extends Component {
                 {this.props.experiences.map((item) => {
                     return (
                         <div key={item.id} className="experience-preview">
-                            <h5>Position</h5>
-                            <div className="preview-item">{item.position}</div>
-                            <h5>Company</h5>
-                            <div className="preview-item">{item.company}</div>
-                            <h5>From</h5>
-                            <div className="preview-item">{item.from}</div>
-                            <h5>To</h5>
-                            <div className="preview-item">{item.to}</div>
+                            <div className="fromto-wrapper">
+                                <h5>From</h5>
+                                <div className="preview-item">{item.from}</div>
+                                <h5>To</h5>
+                                <div className="preview-item">{item.to}</div>
+                            </div>
+                            <div className="item-wrapper">
+                                <h5>Company</h5>
+                                <div className="preview-item">
+                                    {item.company}
+                                </div>
+                                <h5>Position</h5>
+                                <div className="preview-item">
+                                    {item.position}
+                                </div>
+                            </div>
                         </div>
                     )
                 })}
                 <div className="experience-preview">
-                    <h5>Position</h5>
-                    <div className="preview-item">{experience.position}</div>
-                    <h5>Company</h5>
-                    <div className="preview-item">{experience.position}</div>
-                    <h5>From</h5>
-                    <div className="preview-item">{experience.position}</div>
-                    <h5>To</h5>
-                    <div className="preview-item">{experience.position}</div>
+                    <div className="fromto-wrapper">
+                        <h5>From</h5>
+                        <div className="preview-item">{experience.from}</div>
+                        <h5>To</h5>
+                        <div className="preview-item">{experience.to}</div>
+                    </div>
+                    <div className="item-wrapper">
+                        <h5>Company</h5>
+                        <div className="preview-item">{experience.company}</div>
+                        <h5>Position</h5>
+                        <div className="preview-item">
+                            {experience.position}
+                        </div>
+                    </div>
                 </div>
             </div>
         )
