@@ -6,6 +6,7 @@ export class SkillsPreview extends Component {
         super(props)
     }
     render() {
+        const skill = this.props
         return (
             <div className="skills-wrapper">
                 <h4>Skills</h4>
@@ -16,7 +17,7 @@ export class SkillsPreview extends Component {
                         </div>
                     )
                 })}
-                <div className="skill-preview">{this.props.name}</div>
+                <div className="skill-preview">{skill.name}</div>
             </div>
         )
     }
