@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { PersonalInfo } from './PersonalInfo'
 import { WorkExperience } from './WorkExperience'
 import { Education } from './Education'
+import { Skills } from './Skills'
 import { FormOptions } from './FormOptions'
 
 export class Inputs extends Component {
@@ -14,6 +15,7 @@ export class Inputs extends Component {
     render() {
         const additionalExperienceItems = this.props.experiences
         const additionalEducationItems = this.props.educations
+
         return (
             <div className="inputs ">
                 <PersonalInfo {...this.props}></PersonalInfo>
@@ -49,6 +51,12 @@ export class Inputs extends Component {
                     bottomItem={true}
                     {...this.props}
                 ></Education>
+
+                <Skills
+                    key={this.props.skill.id}
+                    bottomItem={true}
+                    {...this.props}
+                ></Skills>
                 <FormOptions {...this.props}></FormOptions>
             </div>
         )
@@ -60,4 +68,6 @@ Inputs.propTypes = {
     experience: PropTypes.object,
     educations: PropTypes.array,
     education: PropTypes.object,
+    skill: PropTypes.object,
+    skills: PropTypes.array,
 }
