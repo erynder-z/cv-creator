@@ -6,21 +6,22 @@ export class EducationPreview extends Component {
         super(props)
     }
     render() {
+        const education = this.props
         return (
             <div className="education-wrapper">
                 <h4>Education</h4>
                 <h5>Institution</h5>
-                <div className="title-preview">{this.props.institution}</div>
+                <div className="title-preview">{education.institution}</div>
                 <h5>City</h5>
-                <div className="title-preview">{this.props.city}</div>
+                <div className="title-preview">{education.city}</div>
                 <h5>Degree</h5>
-                <div className="title-preview">{this.props.degree}</div>
+                <div className="title-preview">{education.degree}</div>
                 <h5>Major</h5>
-                <div className="title-preview">{this.props.major}</div>
+                <div className="title-preview">{education.major}</div>
                 <h5>From</h5>
-                <div className="title-preview">{this.props.from}</div>
+                <div className="title-preview">{education.from}</div>
                 <h5>To</h5>
-                <div className="title-preview">{this.props.to}</div>
+                <div className="title-preview">{education.to}</div>
             </div>
         )
     }
