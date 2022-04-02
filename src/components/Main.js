@@ -39,6 +39,11 @@ export class Main extends Component {
                 to: '',
             },
             educations: [],
+            skill: {
+                id: uniqid(),
+                name: '',
+            },
+            skills: [],
         }
     }
 
@@ -145,6 +150,40 @@ export class Main extends Component {
                 return item.id !== id
             }),
         })
+    }
+
+    handleInputSkill(e, id) {
+        console.log(id)
+        if (id === this.state.skill.id) {
+            this.setState((prevState) => ({
+                skill: {
+                    ...prevState.skill,
+                    name: e.target.value,
+                    id: this.state.skill.id,
+                },
+            }))
+        } else {
+            this.setState((prevState) => ({
+                skills: prevState.skills.map((obj) =>
+                    obj.id === id
+                        ? Object.assign({}, obj, {
+                              name: e.target.value,
+                          })
+                        : obj
+                ),
+            }))
+        }
+    }
+
+    addSkillInput() {
+        const { skills, skill } = this.state
+        this.setState(() => ({
+            skills: [...skills, skill],
+            skill: {
+                id: uniqid(),
+                name: '',
+            },
+        }))
     }
 
     changeInputToDate(e) {
@@ -335,6 +374,12 @@ export class Main extends Component {
                     }}
                     removeInputFieldEducation={(e, id) => {
                         this.removeEducationInput(e, id)
+                    }}
+                    changeSkill={(e, id) => {
+                        this.handleInputSkill(e, id)
+                    }}
+                    addSkill={(e) => {
+                        this.addSkillInput(e)
                     }}
                     getSample={() => {
                         this.loadSample()
