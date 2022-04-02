@@ -256,6 +256,28 @@ export class Main extends Component {
                 to: '2013',
             },
             educations: [],
+            skill: {
+                id: 'sampleskill',
+                name: 'HTML',
+            },
+            skills: [
+                {
+                    id: 'sampleskill2',
+                    name: 'CSS/SASS',
+                },
+                {
+                    id: 'sampleskill3',
+                    name: 'JavaScript',
+                },
+                {
+                    id: 'sampleskill4',
+                    name: 'TDD',
+                },
+                {
+                    id: 'sampleskill5',
+                    name: 'React',
+                },
+            ],
         })
     }
 
@@ -291,6 +313,11 @@ export class Main extends Component {
                 to: '',
             },
             educations: [],
+            skill: {
+                id: uniqid(),
+                name: '',
+            },
+            skills: [],
         })
     }
 
