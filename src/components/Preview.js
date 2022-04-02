@@ -26,7 +26,9 @@ export class Preview extends Component {
                 ></PersonalInfoSidePreview>
 
                 <div className="info-preview">
-                    <div className="personal-preview">{personal.title}</div>
+                    <div className="personal-preview-title">
+                        {personal.title}
+                    </div>
                     <h5>Description:</h5>
                     <div className="personal-preview">
                         {personal.description}
