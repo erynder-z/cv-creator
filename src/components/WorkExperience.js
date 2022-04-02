@@ -30,8 +30,6 @@ export class WorkExperience extends Component {
                         placeholder="position"
                         value={sectionItem.position}
                         onChange={(e) => {
-                            /* const id = this._reactInternals.key */
-
                             this.props.changePosition(e, id)
                         }}
                     />
@@ -78,7 +76,6 @@ export class WorkExperience extends Component {
                         }}
                     />
                     <div
-                        /* className="addSection" */
                         className={isHidden ? 'hidden' : 'addSection'}
                         onClick={(e) => {
                             this.props.addInputFieldExperience(e, id)
@@ -87,7 +84,6 @@ export class WorkExperience extends Component {
                         Add section
                     </div>
                     <div
-                        /* className="removeSection" */
                         className={bottomItem ? 'hidden' : 'addSection'}
                         onClick={(e) => {
                             this.props.removeInputFieldExperience(e, id)
