@@ -61,21 +61,7 @@ export class Preview extends Component {
                         ></WorkExperiencePreview>
                     </div>
 
-                    <div className="education-preview">
-                        {this.props.educations.map((item) => {
-                            return (
-                                <EducationPreview
-                                    key={item.id}
-                                    id={item.id}
-                                    institution={item.institution}
-                                    city={item.city}
-                                    degree={item.degree}
-                                    major={item.major}
-                                    from={item.from}
-                                    to={item.to}
-                                ></EducationPreview>
-                            )
-                        })}
+                    <div className="edu-preview">
                         <EducationPreview
                             key={this.props.education.id}
                             id={this.props.education.id}
@@ -85,6 +71,7 @@ export class Preview extends Component {
                             major={this.props.education.major}
                             from={this.props.education.from}
                             to={this.props.education.to}
+                            {...this.props}
                         ></EducationPreview>
                     </div>
 
