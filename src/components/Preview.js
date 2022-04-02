@@ -10,7 +10,6 @@ export class Preview extends Component {
     }
     render() {
         const { personal } = this.props
-        /* const additionalExperienceItems = this.props.experiences */
         return (
             <div className="preview ">
                 <div className="personal-information-preview-top">
@@ -63,14 +62,6 @@ export class Preview extends Component {
                                 ></WorkExperiencePreview>
                             )
                         })}
-                        {/*   {additionalExperienceItems.map((item) => {
-                            return (
-                                <WorkExperiencePreview
-                                    key={item.id}
-                                    {...this.props}
-                                ></WorkExperiencePreview>
-                            )
-                        })} */}
                         <WorkExperiencePreview
                             key={this.props.experience.id}
                             /* {...this.props} */
