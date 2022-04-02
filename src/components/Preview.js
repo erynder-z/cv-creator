@@ -50,26 +50,14 @@ export class Preview extends Component {
                     </div>
 
                     <div className="work-preview">
-                        {this.props.experiences.map((item) => {
-                            return (
-                                <WorkExperiencePreview
-                                    key={item.id}
-                                    id={item.id}
-                                    position={item.position}
-                                    company={item.company}
-                                    from={item.from}
-                                    to={item.to}
-                                ></WorkExperiencePreview>
-                            )
-                        })}
                         <WorkExperiencePreview
                             key={this.props.experience.id}
-                            /* {...this.props} */
                             id={this.props.experience.id}
                             position={this.props.experience.position}
                             company={this.props.experience.company}
                             from={this.props.experience.from}
                             to={this.props.experience.to}
+                            {...this.props}
                         ></WorkExperiencePreview>
                     </div>
 

@@ -10,14 +10,31 @@ export class WorkExperiencePreview extends Component {
         return (
             <div className="experience-wrapper">
                 <h4>Experience</h4>
-                <h5>Position</h5>
-                <div className="title-preview">{experience.position}</div>
-                <h5>Company</h5>
-                <div className="title-preview">{experience.company}</div>
-                <h5>From</h5>
-                <div className="title-preview">{experience.from}</div>
-                <h5>To</h5>
-                <div className="title-preview">{experience.to}</div>
+
+                {this.props.experiences.map((item) => {
+                    return (
+                        <div key={item.id} className="experience-preview">
+                            <h5>Position</h5>
+                            {item.position}
+                            <h5>Company</h5>
+                            {item.company}
+                            <h5>From</h5>
+                            {item.from}
+                            <h5>To</h5>
+                            {item.to}
+                        </div>
+                    )
+                })}
+                <div className="experience-preview">
+                    <h5>Position</h5>
+                    {experience.position}
+                    <h5>Company</h5>
+                    {experience.company}
+                    <h5>From</h5>
+                    {experience.from}
+                    <h5>To</h5>
+                    {experience.to}
+                </div>
             </div>
         )
     }
