@@ -326,7 +326,6 @@ export class Main extends Component {
             <div className="main-wrapper">
                 <Inputs
                     {...this.state}
-                    /*  experiences={experience} */
                     changeFirstName={(e) => {
                         this.handleInput(e, 'firstName')
                     }}
