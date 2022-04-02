@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { PersonalInfoSidePreview } from './PersonalInfoSidePreview'
 import { WorkExperiencePreview } from './WorkExperiencePreview'
 import { EducationPreview } from './EducationPreview'
 import { SkillsPreview } from './SkillsPreview'
 
 export class Preview extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
     }
     render() {
         const { personal } = this.props
+
         return (
             <div className="preview ">
                 <div className="personal-information-preview-top">
@@ -19,28 +21,9 @@ export class Preview extends Component {
                     <div className="last-name-preview">{personal.lastName}</div>
                 </div>
 
-                <div className="personal-information-preview-side">
-                    <div className="picture">
-                        <img src={personal.picture} alt="Test" />
-                    </div>
-                    <h4>Personal Info</h4>
-                    <div className="personal-preview">
-                        <h5>Date of birth:</h5>
-                        {personal.birthday}
-                    </div>
-                    <div className="personal-preview">
-                        <h5>Address:</h5>
-                        {personal.address}
-                    </div>
-                    <div className="personal-preview">
-                        <h5>Phone:</h5>
-                        {personal.phone}
-                    </div>
-                    <div className="personal-preview">
-                        <h5>Email:</h5>
-                        {personal.email}
-                    </div>
-                </div>
+                <PersonalInfoSidePreview
+                    {...this.props}
+                ></PersonalInfoSidePreview>
 
                 <div className="info-preview">
                     <div className="personal-preview">{personal.title}</div>
