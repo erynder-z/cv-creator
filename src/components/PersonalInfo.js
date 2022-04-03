@@ -11,7 +11,7 @@ export class PersonalInfo extends Component {
         const { personal } = this.props
         return (
             <div className="personal-information-input">
-                <div>Personal Infomation</div>
+                <div className="input-section-title">Personal Infomation</div>
                 <input
                     className="first-name-input"
                     type="text"
@@ -34,7 +34,7 @@ export class PersonalInfo extends Component {
                 />
                 <input
                     className="birthday-input"
-                    type="date"
+                    type="text"
                     id="birthdayInput"
                     placeholder="birthday"
                     value={personal.birthday}
