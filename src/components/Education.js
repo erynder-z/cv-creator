@@ -22,7 +22,7 @@ export class Education extends Component {
         return (
             <div className="inputs ">
                 <div className="education-input">
-                    <div>Education</div>
+                    <div className="input-section-title">Education</div>
                     <input
                         className="education-institution-input"
                         type="text"
