@@ -11,7 +11,7 @@ export class Skills extends Component {
         return (
             <div className="skills ">
                 <div className="skills-input">
-                    <div>Skills</div>
+                    <div className="input-section-title">Skills</div>
 
                     {this.props.skills.map((item) => {
                         return (
