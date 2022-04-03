@@ -84,7 +84,7 @@ export class WorkExperience extends Component {
                         Add section
                     </div>
                     <div
-                        className={bottomItem ? 'hidden' : 'addSection'}
+                        className={bottomItem ? 'hidden' : 'removeSection'}
                         onClick={(e) => {
                             this.props.removeInputFieldExperience(e, id)
                         }}
