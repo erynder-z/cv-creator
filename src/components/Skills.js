@@ -33,6 +33,7 @@ export class Skills extends Component {
                         type="text"
                         id="positionInput"
                         placeholder="input skill"
+                        value={this.props.skill.name}
                         onChange={(e) => {
                             this.props.changeSkill(e, this.props.skill.id)
                         }}
