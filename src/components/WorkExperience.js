@@ -22,7 +22,7 @@ export class WorkExperience extends Component {
         return (
             <div className="inputs ">
                 <div className="experience-input">
-                    <div>Experience</div>
+                    <div className="input-section-title">Experience</div>
                     <input
                         className="experience-position-input"
                         type="text"
