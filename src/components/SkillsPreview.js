@@ -10,14 +10,16 @@ export class SkillsPreview extends Component {
         return (
             <div className="skills-wrapper">
                 <h4>Skills</h4>
-                {this.props.skills.map((item) => {
-                    return (
-                        <div key={item.id} className="skill-preview">
-                            {item.name}
-                        </div>
-                    )
-                })}
-                <div className="skill-preview">{skill.name}</div>
+                <ul>
+                    {this.props.skills.map((item) => {
+                        return (
+                            <li key={item.id} className="skill-preview">
+                                {item.name}
+                            </li>
+                        )
+                    })}
+                    <li className="skill-preview">{skill.name}</li>
+                </ul>
             </div>
         )
     }
