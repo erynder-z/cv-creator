@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+    --header: #393b44;
+    --name: #5c7893;
+    --preview: #f1f3f8;
+    --preview-side: #d6e0f0;
+    --inputs: #fafafa;
+    --card-back: #f1f3f8;
+    --card: #b5cfd8;
+    --changePicBtn: #ebedc8;
+    --addSectionBtn: #63a1d0;
+    --removeSectionBtn: #c1867b;
+    --addSkillBtn: #63a1d0;
+    --loadSampleBtn: #72d6c9;
+    --resetDataBtn: #df7599;
+    --footer: #393b44;
+}
+
 *,
 *::before,
 *::after {
@@ -17,7 +34,6 @@ body {
 }
 
 .main-wrapper {
-    /* width: 100vw; */
     min-height: 93vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -26,13 +42,12 @@ body {
 }
 
 .inputs {
-    background-color: rgb(226, 200, 152);
+    background-color: var(--card-back);
     grid-area: inputs;
 }
 
 .personal-information-input {
-    background-color: beige;
-    margin: 1rem;
+    background-color: var(--card);
     min-height: 45vh;
     display: grid;
     grid-template-columns: 1fr;
@@ -41,11 +56,21 @@ body {
     gap: 1rem;
 }
 
+.personal-information-input > input,
+.experience-input > input,
+.education-input > input,
+.skills-input > input {
+    height: 2rem;
+    font-size: 1rem;
+    background-color: var(--inputs);
+}
+.personal-information-input > textarea {
+    background-color: var(--inputs);
+}
+
 .experience-input,
 .education-input {
-    background-color: beige;
-    margin: 1rem;
-    /*  min-height: 45vh; */
+    background-color: var(--card);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
@@ -53,11 +78,38 @@ body {
     gap: 1rem;
 }
 
-.addSection,
+.addSection {
+    height: 2rem;
+    width: 100%;
+    background-color: var(--addSectionBtn);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
 .removeSection {
     height: 2rem;
     width: 100%;
-    background-color: rgb(255, 0, 255);
+    background-color: var(--removeSectionBtn);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.skills-input {
+    background-color: var(--card);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.add-skill-button {
+    height: 2rem;
+    width: 100%;
+    background-color: var(--addSkillBtn);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,8 +117,7 @@ body {
 }
 
 .options-input {
-    background-color: beige;
-    margin: 1rem;
+    background-color: var(--card);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
@@ -77,7 +128,7 @@ body {
 .sample-button {
     height: 2rem;
     width: 100%;
-    background-color: rgb(0, 153, 255);
+    background-color: var(--loadSampleBtn);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,14 +137,14 @@ body {
 .reset-button {
     height: 2rem;
     width: 100%;
-    background-color: rgb(255, 0, 0);
+    background-color: var(--resetDataBtn);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 .preview {
-    background-color: rgb(226, 182, 152);
+    height: 100%;
     grid-area: preview;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -113,7 +164,7 @@ body {
 
 .personal-information-preview-top {
     /*  height: 10vh; */
-    background-color: salmon;
+    background-color: var(--name);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -123,52 +174,95 @@ body {
     grid-area: up;
 }
 
-.work-preview,
-.education-preview {
-    display: flex;
-    flex-direction: column;
-    /*  min-height: 100%; */
-}
-
 .info-preview {
     grid-area: cont;
-    background-color: rgb(199, 45, 45);
+    background-color: var(--preview);
     padding: 1rem;
     overflow: auto;
 }
 
-.info-wrapper-preview {
+.info-preview > h5 {
+    font-size: large;
+    margin-bottom: 1rem;
 }
 
-.info-wrapper-preview > h4,
-.info-wrapper-preview > h5 {
+.info-preview > div > div > h4 {
+    font-size: larger;
     margin-bottom: 0.5rem;
+    border-bottom: solid 2px black;
 }
 
 .personal-information-preview-side {
-    background-color: rgb(114, 173, 250);
+    background-color: var(--preview-side);
     grid-area: person;
     padding: 1rem;
-    /*   max-width: 15vw; */
 }
 .picture > img {
-    height: 10rem;
-    width: auto;
+    height: auto;
+    width: 100%;
+}
+
+.personal-preview {
+    margin-bottom: 1.5rem;
+}
+
+.personal-preview-title {
+    font-size: x-large;
+    font-style: oblique;
+    text-align: center;
+}
+
+.personal-preview > h5 {
+    margin-bottom: 0.5rem;
+    font-size: large;
 }
 
 .experience-wrapper,
-.education-wrapper {
-    margin-bottom: 1rem;
+.education-wrapper,
+.skills-wrapper {
+    margin-bottom: 1.5rem;
 }
 
 .experience-wrapper > h5,
 .education-wrapper > h5 {
     margin-bottom: 0.5rem;
+    font-size: large;
+}
+
+.experience-preview,
+.education-preview {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 1.5rem;
+}
+
+.skills-preview {
+}
+
+.fromto-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 3rem 2fr;
+}
+
+.fromto-wrapper > div:nth-child(4),
+.fromto-wrapper > div:nth-child(6) {
+    font-size: 20px;
+}
+
+.item-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+}
+
+.item-wrapper > h5 {
+    margin-bottom: 0.5rem;
 }
 
 .custom-file-upload-label {
-    background-color: aqua;
-    width: 30%;
+    background-color: var(--changePicBtn);
+    width: 40%;
     height: 2rem;
     cursor: pointer;
     display: flex;
@@ -178,7 +272,6 @@ body {
 
 .custom-file-upload {
     border: 1px solid #ccc;
-    /* display: inline-block; */
     padding: 6px 12px;
 }
 
