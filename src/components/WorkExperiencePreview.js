@@ -16,8 +16,10 @@ export class WorkExperiencePreview extends Component {
                         <div key={item.id} className="experience-preview">
                             <div className="fromto-wrapper">
                                 <h5>From</h5>
-                                <div className="preview-item">{item.from}</div>
+                                <h5> </h5>
                                 <h5>To</h5>
+                                <div className="preview-item">{item.from}</div>
+                                <div>-</div>
                                 <div className="preview-item">{item.to}</div>
                             </div>
                             <div className="item-wrapper">
@@ -36,8 +38,10 @@ export class WorkExperiencePreview extends Component {
                 <div className="experience-preview">
                     <div className="fromto-wrapper">
                         <h5>From</h5>
-                        <div className="preview-item">{experience.from}</div>
+                        <h5> </h5>
                         <h5>To</h5>
+                        <div className="preview-item">{experience.from}</div>
+                        <div>-</div>
                         <div className="preview-item">{experience.to}</div>
                     </div>
                     <div className="item-wrapper">
