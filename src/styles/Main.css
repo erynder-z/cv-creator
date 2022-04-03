@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-    --header: #393b44;
-    --name: #5c7893;
+    --name: #264e70;
     --preview: #f1f3f8;
     --preview-side: #d6e0f0;
     --inputs: #fafafa;
     --card-back: #f1f3f8;
-    --card: #b5cfd8;
+    --card: #ccd1e4;
     --changePicBtn: #ebedc8;
     --addSectionBtn: #63a1d0;
     --removeSectionBtn: #c1867b;
     --addSkillBtn: #63a1d0;
     --loadSampleBtn: #72d6c9;
     --resetDataBtn: #df7599;
-    --footer: #393b44;
 }
 
 *,
@@ -56,12 +54,18 @@ body {
     gap: 1rem;
 }
 
+.input-section-title {
+    display: flex;
+    align-items: flex-end;
+    font-weight: bold;
+}
+
 .personal-information-input > input,
 .experience-input > input,
 .education-input > input,
 .skills-input > input {
     height: 2rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     background-color: var(--inputs);
 }
 .personal-information-input > textarea {
@@ -144,11 +148,10 @@ body {
     cursor: pointer;
 }
 .preview {
-    height: 100%;
     grid-area: preview;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 5rem repeat(9, 1fr);
+    grid-template-rows: 5rem repeat(9, 10rem);
     grid-template-areas:
         'up up up up'
         'cont cont cont person'
@@ -160,11 +163,13 @@ body {
         'cont cont cont person'
         'cont cont cont person'
         'cont cont cont person';
+    min-height: fit-content;
+    background-color: var(--card);
 }
 
 .personal-information-preview-top {
-    /*  height: 10vh; */
     background-color: var(--name);
+    color: var(--preview);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -177,7 +182,7 @@ body {
 .info-preview {
     grid-area: cont;
     background-color: var(--preview);
-    padding: 1rem;
+    padding: 2rem;
     overflow: auto;
 }
 

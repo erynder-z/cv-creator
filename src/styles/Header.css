@@ -1,4 +1,14 @@
+:root {
+    --header: #ccd1e4;
+}
+
 .navbar {
-  height: 5vh;
-  background-color: rgb(140, 171, 201);
+    height: 5vh;
+    background-color: var(--header);
+}
+
+.header-text {
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: bolder;
 }
