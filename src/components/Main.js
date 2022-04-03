@@ -196,14 +196,11 @@ export class Main extends Component {
 
     uploadPicture(e) {
         let file = e.target.files[0]
+        if (!file) return
         // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
-        let reader = new FileReader()
+        const reader = new FileReader()
 
-        if (e.target.files.length === 0) {
-            return
-        }
-
-        reader.onloadend = () => {
+        reader.onload = () => {
             this.setState((prevState) => ({
                 personal: {
                     ...prevState.personal,
