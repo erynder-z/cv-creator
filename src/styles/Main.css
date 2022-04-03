@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 :root {
     --name: #264e70;
@@ -7,12 +7,12 @@
     --inputs: #fafafa;
     --card-back: #f1f3f8;
     --card: #ccd1e4;
-    --changePicBtn: #ebedc8;
-    --addSectionBtn: #63a1d0;
-    --removeSectionBtn: #c1867b;
-    --addSkillBtn: #63a1d0;
-    --loadSampleBtn: #72d6c9;
-    --resetDataBtn: #df7599;
+    --changePicBtn: #2e4c6d;
+    --addSectionBtn: #2e4c6d;
+    --removeSectionBtn: #b33030;
+    --addSkillBtn: #2e4c6d;
+    --loadSampleBtn: #e26a2c;
+    --resetDataBtn: #700b97;
 }
 
 *,
@@ -36,7 +36,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-areas: 'inputs preview';
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .inputs {
@@ -65,8 +65,10 @@ body {
 .education-input > input,
 .skills-input > input {
     height: 2rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     background-color: var(--inputs);
+    border: none;
+    padding: 0 0.5rem;
 }
 .personal-information-input > textarea {
     background-color: var(--inputs);
@@ -86,6 +88,7 @@ body {
     height: 2rem;
     width: 100%;
     background-color: var(--addSectionBtn);
+    color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,6 +99,7 @@ body {
     height: 2rem;
     width: 100%;
     background-color: var(--removeSectionBtn);
+    color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,6 +118,7 @@ body {
     height: 2rem;
     width: 100%;
     background-color: var(--addSkillBtn);
+    color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,6 +138,7 @@ body {
     height: 2rem;
     width: 100%;
     background-color: var(--loadSampleBtn);
+    color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,6 +148,7 @@ body {
     height: 2rem;
     width: 100%;
     background-color: var(--resetDataBtn);
+    color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,7 +215,7 @@ body {
 }
 
 .personal-preview {
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .personal-preview-title {
@@ -264,6 +271,7 @@ body {
 
 .custom-file-upload-label {
     background-color: var(--changePicBtn);
+    color: whitesmoke;
     width: 35%;
     height: 2.5rem;
     cursor: pointer;
