@@ -241,9 +241,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.skills-preview {
-}
-
 .fromto-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
@@ -267,12 +264,13 @@ body {
 
 .custom-file-upload-label {
     background-color: var(--changePicBtn);
-    width: 40%;
-    height: 2rem;
+    width: 35%;
+    height: 2.5rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .custom-file-upload {
@@ -286,4 +284,16 @@ input[type='file'] {
 
 .hidden {
     display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .preview {
+        display: flex;
+        flex-direction: column;
+    }
 }
