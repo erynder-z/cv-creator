@@ -48,16 +48,7 @@ export class PersonalInfo extends Component {
                         this.props.changeDOB(e)
                     }}
                 />
-                <input
-                    className="title-input"
-                    type="text"
-                    id="titleInput"
-                    placeholder="title"
-                    value={personal.title}
-                    onChange={(e) => {
-                        this.props.changeTitle(e)
-                    }}
-                />
+
                 <input
                     className="address-input"
                     type="text"
@@ -86,6 +77,16 @@ export class PersonalInfo extends Component {
                     value={personal.email}
                     onChange={(e) => {
                         this.props.changeEmail(e)
+                    }}
+                />
+                <input
+                    className="title-input"
+                    type="text"
+                    id="titleInput"
+                    placeholder="title"
+                    value={personal.title}
+                    onChange={(e) => {
+                        this.props.changeTitle(e)
                     }}
                 />
                 <textarea
