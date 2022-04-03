@@ -16,8 +16,10 @@ export class EducationPreview extends Component {
                         <div key={item.id} className="education-preview">
                             <div className="fromto-wrapper">
                                 <h5>From</h5>
-                                <div className="preview-item">{item.from}</div>
+                                <h5></h5>
                                 <h5>To</h5>
+                                <div className="preview-item">{item.from}</div>
+                                <div>-</div>
                                 <div className="preview-item">{item.to}</div>
                             </div>
                             <div className="item-wrapper">
@@ -38,10 +40,12 @@ export class EducationPreview extends Component {
                     )
                 })}
                 <div className="education-preview">
-                    <div className="fromto-wapper">
+                    <div className="fromto-wrapper">
                         <h5>From</h5>
-                        <div className="preview-item">{education.from}</div>
+                        <h5></h5>
                         <h5>To</h5>
+                        <div className="preview-item">{education.from}</div>
+                        <div>-</div>
                         <div className="preview-item">{education.to}</div>
                     </div>
                     <div className="item-wrapper">
