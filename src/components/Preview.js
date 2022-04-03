@@ -29,7 +29,7 @@ export class Preview extends Component {
                     <div className="personal-preview-title">
                         {personal.title}
                     </div>
-                    <h5>Description:</h5>
+                    <h5>About me:</h5>
                     <div className="personal-preview">
                         {personal.description}
                     </div>
