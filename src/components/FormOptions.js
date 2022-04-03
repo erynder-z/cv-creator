@@ -11,7 +11,7 @@ export class FormOptions extends Component {
         return (
             <div className="options ">
                 <div className="options-input">
-                    <div>Document options</div>
+                    <div className="input-section-title">Document options</div>
                     <div
                         className={'sample-button'}
                         onClick={() => {
