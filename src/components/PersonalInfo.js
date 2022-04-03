@@ -107,7 +107,7 @@ export class PersonalInfo extends Component {
                     id="picture"
                     name="picture"
                     accept="image/png, image/jpeg"
-                    onClick={(e) => {
+                    onChange={(e) => {
                         this.props.uploadPic(e)
                     }}
                 ></input>
