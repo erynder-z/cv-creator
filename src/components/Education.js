@@ -101,7 +101,7 @@ export class Education extends Component {
                             this.props.addInputFieldEducation(e, id)
                         }}
                     >
-                        Add section
+                        Add another education
                     </div>
                     <div
                         className={bottomItem ? 'hidden' : 'removeSection'}
@@ -109,7 +109,7 @@ export class Education extends Component {
                             this.props.removeInputFieldEducation(e, id)
                         }}
                     >
-                        Remove section
+                        Remove this section
                     </div>
                 </div>
             </div>

@@ -81,7 +81,7 @@ export class WorkExperience extends Component {
                             this.props.addInputFieldExperience(e, id)
                         }}
                     >
-                        Add section
+                        Add another experience
                     </div>
                     <div
                         className={bottomItem ? 'hidden' : 'removeSection'}
@@ -89,7 +89,7 @@ export class WorkExperience extends Component {
                             this.props.removeInputFieldExperience(e, id)
                         }}
                     >
-                        Remove section
+                        Remove this section
                     </div>
                 </div>
             </div>
