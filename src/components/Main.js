@@ -220,13 +220,14 @@ export class Main extends Component {
                 id: 'sample',
                 firstName: 'Jean',
                 lastName: 'Dupont',
-                birthday: '1990-12-31',
+                birthday: '1990-08-15',
                 title: 'Web Developer',
                 address: '123 Fake Street',
                 phone: '+33 1 499 123',
                 email: 'me@example.com',
                 description:
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugit quod doloremque, aut fuga iusto commodi officiis maiores ducimus non!',
+                    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti cupiditate nobis, earum nam corrupti odit quasi. Nulla amet porro sit sed officiis officia dolores cum modi corrupti molestias ipsa quibusdam vero quasi quos totam doloribus obcaecati architecto accusantium, dolore tenetur. Atque, optio eum aliquam nobis consectetur sunt voluptatem tempore tenetur?',
+
                 picture: samplePic,
             },
             experience: {
