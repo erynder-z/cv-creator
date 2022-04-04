@@ -72,6 +72,7 @@ body {
 }
 .personal-information-input > textarea {
     background-color: var(--inputs);
+    font-size: 1rem;
 }
 
 .experience-input,
@@ -85,7 +86,7 @@ body {
 }
 
 .addSection {
-    height: 2rem;
+    height: 2.5rem;
     width: 100%;
     background-color: var(--addSectionBtn);
     color: whitesmoke;
@@ -96,7 +97,7 @@ body {
 }
 
 .removeSection {
-    height: 2rem;
+    height: 2.5rem;
     width: 100%;
     background-color: var(--removeSectionBtn);
     color: whitesmoke;
@@ -115,7 +116,7 @@ body {
 }
 
 .add-skill-button {
-    height: 2rem;
+    height: 2.5rem;
     width: 100%;
     background-color: var(--addSkillBtn);
     color: whitesmoke;
@@ -159,7 +160,7 @@ body {
     grid-area: preview;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 5rem repeat(9, 9rem);
+    grid-template-rows: 5rem repeat(9, 10rem);
     /*  grid-template-areas:
         'up up up up'
         'cont cont cont person'
