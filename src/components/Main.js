@@ -4,6 +4,8 @@ import { Inputs } from './Inputs'
 import { Preview } from './Preview'
 import placeholder from '../assets/placeholder.png'
 import samplePic from '../assets/napoleon.jpg'
+import printIcon from '../assets/printer.svg'
+import ReactToPrint from 'react-to-print'
 
 export class Main extends Component {
     constructor() {
@@ -412,7 +414,20 @@ export class Main extends Component {
                     }}
                 ></Inputs>
 
-                <Preview {...this.state}></Preview>
+                <ReactToPrint
+                    trigger={() => {
+                        return (
+                            <div className="print">
+                                <img src={printIcon} alt="printer icon" />
+                            </div>
+                        )
+                    }}
+                    content={() => this.componentRef}
+                />
+                <Preview
+                    ref={(el) => (this.componentRef = el)}
+                    {...this.state}
+                ></Preview>
             </div>
         )
     }
