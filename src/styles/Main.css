@@ -159,7 +159,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 5rem repeat(9, 10rem);
-    grid-template-areas:
+    /*  grid-template-areas:
         'up up up up'
         'cont cont cont person'
         'cont cont cont person'
@@ -169,7 +169,7 @@ body {
         'cont cont cont person'
         'cont cont cont person'
         'cont cont cont person'
-        'cont cont cont person';
+        'cont cont cont person'; */
     min-height: fit-content;
     background-color: var(--card);
 }
@@ -184,6 +184,8 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     grid-area: up;
+    grid-column: 1/-1;
+    grid-row: 1/2;
 }
 
 .info-preview {
@@ -191,6 +193,8 @@ body {
     background-color: var(--preview);
     padding: 2rem;
     overflow: auto;
+    grid-column: 1/4;
+    grid-row: 2/-1;
 }
 
 .info-preview > h5 {
@@ -208,6 +212,8 @@ body {
     background-color: var(--preview-side);
     grid-area: person;
     padding: 1rem;
+    grid-column: 4/-1;
+    grid-row: 2/-1;
 }
 .picture > img {
     height: auto;
