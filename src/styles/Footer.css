@@ -2,8 +2,8 @@
     --footer: #343a40;
 }
 .footer {
-    /*  width: 100vw; */
-    height: 2vh;
+    min-height: fit-content;
+    padding: 0.5rem;
     background-color: var(--footer);
     color: white;
     text-align: center;
