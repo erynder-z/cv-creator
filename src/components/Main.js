@@ -155,7 +155,6 @@ export class Main extends Component {
     }
 
     handleInputSkill(e, id) {
-        console.log(id)
         if (id === this.state.skill.id) {
             this.setState((prevState) => ({
                 skill: {
