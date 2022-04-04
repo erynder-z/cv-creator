@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/erynder-z/cv-project/static/css/main.74a13f6c.css",
-    "main.js": "/erynder-z/cv-project/static/js/main.865cb096.js",
-    "static/media/napoleon.jpg": "/erynder-z/cv-project/static/media/napoleon.8b428bf4cb14b01c9052.jpg",
-    "static/media/placeholder.png": "/erynder-z/cv-project/static/media/placeholder.fed8a1cfd147c5cc008d.png",
-    "index.html": "/erynder-z/cv-project/index.html",
-    "static/media/printer.svg": "/erynder-z/cv-project/static/media/printer.2db477def5910fe4d736d869eb813174.svg",
-    "main.74a13f6c.css.map": "/erynder-z/cv-project/static/css/main.74a13f6c.css.map",
-    "main.865cb096.js.map": "/erynder-z/cv-project/static/js/main.865cb096.js.map"
+    "main.css": "/cv-project/static/css/main.74a13f6c.css",
+    "main.js": "/cv-project/static/js/main.d080a108.js",
+    "static/media/napoleon.jpg": "/cv-project/static/media/napoleon.8b428bf4cb14b01c9052.jpg",
+    "static/media/placeholder.png": "/cv-project/static/media/placeholder.fed8a1cfd147c5cc008d.png",
+    "index.html": "/cv-project/index.html",
+    "static/media/printer.svg": "/cv-project/static/media/printer.2db477def5910fe4d736d869eb813174.svg",
+    "main.74a13f6c.css.map": "/cv-project/static/css/main.74a13f6c.css.map",
+    "main.d080a108.js.map": "/cv-project/static/js/main.d080a108.js.map"
   },
   "entrypoints": [
     "static/css/main.74a13f6c.css",
-    "static/js/main.865cb096.js"
+    "static/js/main.d080a108.js"
   ]
 }
