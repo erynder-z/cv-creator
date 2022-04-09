@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './styles/App.css'
 import './styles/Header.css'
 import './styles/Main.css'
@@ -7,21 +7,14 @@ import { Header } from './components/Header'
 import { Main } from './components/Main'
 import { Footer } from './components/Footer'
 
-class App extends Component {
-    constructor() {
-        super()
-        this.state = {}
-    }
-
-    render() {
-        return (
-            <div className="app-wrapper">
-                <Header></Header>
-                <Main></Main>
-                <Footer></Footer>
-            </div>
-        )
-    }
+const App = () => {
+    return (
+        <div className="app-wrapper">
+            <Header></Header>
+            <Main></Main>
+            <Footer></Footer>
+        </div>
+    )
 }
 
 export default App

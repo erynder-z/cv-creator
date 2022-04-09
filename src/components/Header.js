@@ -1,16 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class Header extends Component {
-    constructor() {
-        super()
-        this.state = {}
-    }
-
-    render() {
-        return (
-            <nav className="navbar ">
-                <div className="header-text">CV-CREATOR</div>
-            </nav>
-        )
-    }
+export const Header = () => {
+    return (
+        <nav className="navbar ">
+            <div className="header-text">CV-CREATOR</div>
+        </nav>
+    )
 }
