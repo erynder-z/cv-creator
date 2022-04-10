@@ -1,55 +1,48 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-export class Skills extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {}
-    }
+export const Skills = (props) => {
+    return (
+        <div className="skills ">
+            <div className="skills-input">
+                <div className="input-section-title">Skills</div>
 
-    render() {
-        return (
-            <div className="skills ">
-                <div className="skills-input">
-                    <div className="input-section-title">Skills</div>
-
-                    {this.props.skills.map((item) => {
-                        return (
-                            <input
-                                key={item.id}
-                                className="skill-input"
-                                type="text"
-                                id="positionInput"
-                                placeholder="input skill"
-                                value={item.name}
-                                onChange={(e) => {
-                                    this.props.changeSkill(e, item.id)
-                                }}
-                            />
-                        )
-                    })}
-                    <input
-                        className="skill-input"
-                        type="text"
-                        id="positionInput"
-                        placeholder="input skill"
-                        value={this.props.skill.name}
-                        onChange={(e) => {
-                            this.props.changeSkill(e, this.props.skill.id)
-                        }}
-                    />
-                    <div
-                        className={'add-skill-button'}
-                        onClick={(e) => {
-                            this.props.addSkill(e)
-                        }}
-                    >
-                        Add skill
-                    </div>
+                {props.skills.map((item) => {
+                    return (
+                        <input
+                            key={item.id}
+                            className="skill-input"
+                            type="text"
+                            id="positionInput"
+                            placeholder="input skill"
+                            value={item.name}
+                            onChange={(e) => {
+                                props.changeSkill(e, item.id)
+                            }}
+                        />
+                    )
+                })}
+                <input
+                    className="skill-input"
+                    type="text"
+                    id="positionInput"
+                    placeholder="input skill"
+                    value={props.skill.name}
+                    onChange={(e) => {
+                        props.changeSkill(e, props.skill.id)
+                    }}
+                />
+                <div
+                    className={'add-skill-button'}
+                    onClick={(e) => {
+                        props.addSkill(e)
+                    }}
+                >
+                    Add skill
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 Skills.propTypes = {
