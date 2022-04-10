@@ -18,6 +18,7 @@ export const Inputs = (props) => {
                 return (
                     <WorkExperience
                         key={item.id}
+                        id={item.id}
                         sectionValues={item}
                         isHidden={true}
                         {...props}
@@ -26,6 +27,7 @@ export const Inputs = (props) => {
             })}
             <WorkExperience
                 key={props.experience.id}
+                id={props.experience.id}
                 bottomItem={true}
                 {...props}
             ></WorkExperience>
@@ -34,6 +36,7 @@ export const Inputs = (props) => {
                 return (
                     <Education
                         key={item.id}
+                        id={item.id}
                         sectionValues={item}
                         isHidden={true}
                         {...props}
@@ -42,6 +45,7 @@ export const Inputs = (props) => {
             })}
             <Education
                 key={props.education.id}
+                id={props.education.id}
                 bottomItem={true}
                 {...props}
             ></Education>
