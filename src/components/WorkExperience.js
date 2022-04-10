@@ -1,103 +1,97 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-export class WorkExperience extends Component {
-    constructor() {
-        super()
-        this.state = {}
+export const WorkExperience = (props) => {
+    const id = props.id
+    let sectionItem
+    if (props.sectionValues === undefined) {
+        sectionItem = props.experience
+    } else {
+        sectionItem = props.sectionValues
     }
 
-    render() {
-        const id = this._reactInternals.key
-        let sectionItem
-        if (this.props.sectionValues === undefined) {
-            sectionItem = this.props.experience
-        } else {
-            sectionItem = this.props.sectionValues
-        }
+    const isHidden = props.isHidden
+    const bottomItem = props.bottomItem
 
-        const isHidden = this.props.isHidden
-        const bottomItem = this.props.bottomItem
-
-        return (
-            <div className="inputs ">
-                <div className="experience-input">
-                    <div className="input-section-title">Experience</div>
-                    <input
-                        className="experience-position-input"
-                        type="text"
-                        id="positionInput"
-                        placeholder="position"
-                        value={sectionItem.position}
-                        onChange={(e) => {
-                            this.props.changePosition(e, id)
-                        }}
-                    />
-                    <input
-                        className="experience-company-input"
-                        type="text"
-                        id="companyInput"
-                        placeholder="company"
-                        value={sectionItem.company}
-                        onChange={(e) => {
-                            this.props.changeCompany(e, id)
-                        }}
-                    />
-                    <input
-                        className="experience-from-input"
-                        type="text"
-                        id="fromInput"
-                        placeholder="from"
-                        value={sectionItem.from}
-                        onFocus={(e) => {
-                            this.props.changeInputTypeIn(e, id)
-                        }}
-                        onBlur={(e) => {
-                            this.props.changeInputTypeOut(e, id)
-                        }}
-                        onChange={(e) => {
-                            this.props.changeCompanyFrom(e, id)
-                        }}
-                    />
-                    <input
-                        className="experience-to-input"
-                        type="text"
-                        id="toInput"
-                        placeholder="to"
-                        value={sectionItem.to}
-                        onFocus={(e) => {
-                            this.props.changeInputTypeIn(e, id)
-                        }}
-                        onBlur={(e) => {
-                            this.props.changeInputTypeOut(e, id)
-                        }}
-                        onChange={(e) => {
-                            this.props.changeCompanyTo(e, id)
-                        }}
-                    />
-                    <div
-                        className={isHidden ? 'hidden' : 'addSection'}
-                        onClick={(e) => {
-                            this.props.addInputFieldExperience(e, id)
-                        }}
-                    >
-                        Add experience section
-                    </div>
-                    <div
-                        className={bottomItem ? 'hidden' : 'removeSection'}
-                        onClick={(e) => {
-                            this.props.removeInputFieldExperience(e, id)
-                        }}
-                    >
-                        Remove this section
-                    </div>
+    return (
+        <div className="inputs ">
+            <div className="experience-input">
+                <div className="input-section-title">Experience</div>
+                <input
+                    className="experience-position-input"
+                    type="text"
+                    id="positionInput"
+                    placeholder="position"
+                    value={sectionItem.position}
+                    onChange={(e) => {
+                        props.changePosition(e, id)
+                    }}
+                />
+                <input
+                    className="experience-company-input"
+                    type="text"
+                    id="companyInput"
+                    placeholder="company"
+                    value={sectionItem.company}
+                    onChange={(e) => {
+                        props.changeCompany(e, id)
+                    }}
+                />
+                <input
+                    className="experience-from-input"
+                    type="text"
+                    id="fromInput"
+                    placeholder="from"
+                    value={sectionItem.from}
+                    onFocus={(e) => {
+                        props.changeInputTypeIn(e, id)
+                    }}
+                    onBlur={(e) => {
+                        props.changeInputTypeOut(e, id)
+                    }}
+                    onChange={(e) => {
+                        props.changeCompanyFrom(e, id)
+                    }}
+                />
+                <input
+                    className="experience-to-input"
+                    type="text"
+                    id="toInput"
+                    placeholder="to"
+                    value={sectionItem.to}
+                    onFocus={(e) => {
+                        props.changeInputTypeIn(e, id)
+                    }}
+                    onBlur={(e) => {
+                        props.changeInputTypeOut(e, id)
+                    }}
+                    onChange={(e) => {
+                        props.changeCompanyTo(e, id)
+                    }}
+                />
+                <div
+                    className={isHidden ? 'hidden' : 'addSection'}
+                    onClick={(e) => {
+                        props.addInputFieldExperience(e, id)
+                    }}
+                >
+                    Add experience section
+                </div>
+                <div
+                    className={bottomItem ? 'hidden' : 'removeSection'}
+                    onClick={(e) => {
+                        props.removeInputFieldExperience(e, id)
+                    }}
+                >
+                    Remove this section
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 WorkExperience.propTypes = {
+    id: PropTypes.string,
     changePosition: PropTypes.func,
     changeCompany: PropTypes.func,
     changeInputTypeIn: PropTypes.func,
