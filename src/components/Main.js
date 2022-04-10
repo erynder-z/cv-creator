@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useRef } from 'react'
 import uniqid from 'uniqid'
 import { Inputs } from './Inputs'
 import { Preview } from './Preview'
@@ -7,72 +7,77 @@ import samplePic from '../assets/napoleon.jpg'
 import printIcon from '../assets/printer.svg'
 import ReactToPrint from 'react-to-print'
 
-export class Main extends Component {
-    constructor() {
-        super()
-        this.state = {
-            personal: {
-                id: uniqid(),
-                firstName: '',
-                lastName: '',
-                birthday: '',
-                title: '',
-                address: '',
-                phone: '',
-                email: '',
-                description: '',
-                picture: placeholder,
-            },
-            experience: {
-                id: uniqid(),
-                position: '',
-                company: '',
-                from: '',
-                to: '',
-            },
-            experiences: [],
-            education: {
-                id: uniqid(),
-                institution: '',
-                city: '',
-                degree: '',
-                major: '',
-                from: '',
-                to: '',
-            },
-            educations: [],
-            skill: {
-                id: uniqid(),
-                name: '',
-            },
-            skills: [],
-        }
-    }
+export const Main = () => {
+    const componentRef = useRef()
 
-    handleInput(e, target) {
+    const [personal, setPersonal] = useState({
+        id: uniqid(),
+        firstName: '',
+        lastName: '',
+        birthday: '',
+        title: '',
+        address: '',
+        phone: '',
+        email: '',
+        description: '',
+        picture: placeholder,
+    })
+
+    const [experience, setExperience] = useState({
+        id: uniqid(),
+        position: '',
+        company: '',
+        from: '',
+        to: '',
+    })
+
+    const [experiences, setExperiences] = useState({
+        experiences: [],
+    })
+
+    const [education, setEducation] = useState({
+        id: uniqid(),
+        institution: '',
+        city: '',
+        degree: '',
+        major: '',
+        from: '',
+        to: '',
+    })
+
+    const [educations, setEducations] = useState({
+        educations: [],
+    })
+
+    const [skill, setSkill] = useState({
+        id: uniqid(),
+        name: '',
+    })
+
+    const [skills, setSkills] = useState({
+        skills: [],
+    })
+
+    const handleInput = (e, target) => {
         let key = `${target}`
-        this.setState((prevState) => ({
-            personal: {
-                ...prevState.personal,
-                [key]: e.target.value,
-                id: this.state.personal.id,
-            },
+
+        setPersonal((prevState) => ({
+            ...prevState,
+            [key]: e.target.value,
         }))
     }
 
-    handleInputExperience(e, id, target) {
+    const handleInputExperience = (e, id, target) => {
         let key = `${target}`
 
-        if (id === this.state.experience.id) {
-            this.setState((prevState) => ({
-                experience: {
-                    ...prevState.experience,
-                    [key]: e.target.value,
-                    id: this.state.experience.id,
-                },
+        if (id === experience.id) {
+            setExperience((prevState) => ({
+                ...prevState,
+                [key]: e.target.value,
+                /* id: experience.id, */
             }))
         } else {
-            this.setState((prevState) => ({
+            setExperiences((prevState) => ({
                 experiences: prevState.experiences.map((obj) =>
                     obj.id === id
                         ? Object.assign({}, obj, {
@@ -84,41 +89,38 @@ export class Main extends Component {
         }
     }
 
-    addExperienceInput() {
-        const { experiences, experience } = this.state
-        this.setState(() => ({
-            experiences: [...experiences, experience],
-            experience: {
-                id: uniqid(),
-                position: '',
-                company: '',
-                from: '',
-                to: '',
-            },
+    const addExperienceInput = () => {
+        setExperiences(() => ({
+            experiences: [...experiences.experiences, experience],
+        }))
+        setExperience(() => ({
+            id: uniqid(),
+            position: '',
+            company: '',
+            from: '',
+            to: '',
         }))
     }
 
-    removeExperienceInput(e, id) {
-        this.setState({
-            experiences: this.state.experiences.filter(function (item) {
+    const removeExperienceInput = (e, id) => {
+        setExperiences({
+            experiences: experiences.experiences.filter(function (item) {
                 return item.id !== id
             }),
         })
     }
 
-    handleInputEducation(e, id, target) {
+    const handleInputEducation = (e, id, target) => {
         let key = `${target}`
 
-        if (id === this.state.education.id) {
-            this.setState((prevState) => ({
-                education: {
-                    ...prevState.education,
-                    [key]: e.target.value,
-                    id: this.state.education.id,
-                },
+        if (id === education.id) {
+            setEducation((prevState) => ({
+                ...prevState,
+                [key]: e.target.value,
+                /* id: education.id, */
             }))
         } else {
-            this.setState((prevState) => ({
+            setEducations((prevState) => ({
                 educations: prevState.educations.map((obj) =>
                     obj.id === id
                         ? Object.assign({}, obj, {
@@ -130,41 +132,38 @@ export class Main extends Component {
         }
     }
 
-    addEducationInput() {
-        const { educations, education } = this.state
-        this.setState(() => ({
-            educations: [...educations, education],
-            education: {
-                id: uniqid(),
-                institution: '',
-                city: '',
-                degree: '',
-                major: '',
-                from: '',
-                to: '',
-            },
+    const addEducationInput = () => {
+        setEducations(() => ({
+            educations: [...educations.educations, education],
+        }))
+        setEducation(() => ({
+            id: uniqid(),
+            institution: '',
+            city: '',
+            degree: '',
+            major: '',
+            from: '',
+            to: '',
         }))
     }
 
-    removeEducationInput(e, id) {
-        this.setState({
-            educations: this.state.educations.filter(function (item) {
+    const removeEducationInput = (e, id) => {
+        setEducations({
+            educations: educations.educations.filter(function (item) {
                 return item.id !== id
             }),
         })
     }
 
-    handleInputSkill(e, id) {
-        if (id === this.state.skill.id) {
-            this.setState((prevState) => ({
-                skill: {
-                    ...prevState.skill,
-                    name: e.target.value,
-                    id: this.state.skill.id,
-                },
+    const handleInputSkill = (e, id) => {
+        if (id === skill.id) {
+            setSkill((prevState) => ({
+                ...prevState.skill,
+                name: e.target.value,
+                id: skill.id,
             }))
         } else {
-            this.setState((prevState) => ({
+            setSkills((prevState) => ({
                 skills: prevState.skills.map((obj) =>
                     obj.id === id
                         ? Object.assign({}, obj, {
@@ -176,76 +175,73 @@ export class Main extends Component {
         }
     }
 
-    addSkillInput() {
-        const { skills, skill } = this.state
-        this.setState(() => ({
-            skills: [...skills, skill],
-            skill: {
-                id: uniqid(),
-                name: '',
-            },
+    const addSkillInput = () => {
+        setSkills(() => ({
+            skills: [...skills.skills, skill],
+        }))
+        setSkill(() => ({
+            id: uniqid(),
+            name: '',
         }))
     }
 
-    changeInputToDate(e) {
+    const changeInputToDate = (e) => {
         e.target.type = 'date'
     }
 
-    changeInputToText(e) {
+    const changeInputToText = (e) => {
         e.target.type = 'text'
     }
 
-    uploadPicture(e) {
+    const uploadPicture = (e) => {
         let file = e.target.files[0]
         if (!file) return
         // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
         const reader = new FileReader()
 
         reader.onload = () => {
-            this.setState((prevState) => ({
-                personal: {
-                    ...prevState.personal,
-                    picture: [reader.result],
-                    id: this.state.personal.id,
-                },
+            setPersonal((prevState) => ({
+                ...prevState,
+                picture: [reader.result],
             }))
         }
         reader.readAsDataURL(file)
     }
 
-    loadSample() {
-        this.setState({
-            personal: {
-                id: 'sample',
-                firstName: 'Jean',
-                lastName: 'Dupont',
-                birthday: '1990-08-15',
-                title: 'Web Developer',
-                address: '123 Fake Street',
-                phone: '+33 1 499 123',
-                email: 'me@example.com',
-                description:
-                    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti cupiditate nobis, earum nam corrupti odit quasi. Nulla amet porro sit sed officiis officia dolores cum modi corrupti molestias ipsa quibusdam vero quasi quos totam doloribus obcaecati architecto accusantium, dolore tenetur. Atque, optio eum aliquam nobis consectetur sunt voluptatem tempore tenetur?',
+    const loadSample = () => {
+        setPersonal({
+            id: 'sample',
+            firstName: 'Jean',
+            lastName: 'Dupont',
+            birthday: '1990-08-15',
+            title: 'Web Developer',
+            address: '123 Fake Street',
+            phone: '+33 1 499 123',
+            email: 'me@example.com',
+            description:
+                'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti cupiditate nobis, earum nam corrupti odit quasi. Nulla amet porro sit sed officiis officia dolores cum modi corrupti molestias ipsa quibusdam vero quasi quos totam doloribus obcaecati architecto accusantium, dolore tenetur. Atque, optio eum aliquam nobis consectetur sunt voluptatem tempore tenetur?',
 
-                picture: samplePic,
-            },
-            experience: {
+            picture: samplePic,
+        }),
+            setExperience({
                 id: 'sampleExp2',
                 position: 'Junior Web Developer',
                 company: 'Vaprorcomp Inc.',
                 from: '2013',
                 to: '2015',
-            },
-            experiences: [
-                {
-                    id: 'sampleExp',
-                    position: 'Senior Web Developer',
-                    company: 'Flancrest Enterprises ',
-                    from: '2015',
-                    to: 'current',
-                },
-            ],
-            education: {
+            }),
+            setExperiences({
+                experiences: [
+                    {
+                        id: 'sampleExp',
+                        position: 'Senior Web Developer',
+                        company: 'Flancrest Enterprises ',
+                        from: '2015',
+                        to: 'current',
+                    },
+                ],
+            }),
+            setEducation({
                 id: 'sampleEdu',
                 institution: 'Ludwig Maximilian University',
                 city: 'Munich, Germany',
@@ -253,34 +249,37 @@ export class Main extends Component {
                 major: 'Computer Science',
                 from: '2010',
                 to: '2013',
-            },
-            educations: [],
-            skill: {
+            }),
+            setEducations({
+                educations: [],
+            }),
+            setSkill({
                 id: 'sampleskill',
                 name: 'HTML',
-            },
-            skills: [
-                {
-                    id: 'sampleskill2',
-                    name: 'CSS/SASS',
-                },
-                {
-                    id: 'sampleskill3',
-                    name: 'JavaScript',
-                },
-                {
-                    id: 'sampleskill4',
-                    name: 'TDD',
-                },
-                {
-                    id: 'sampleskill5',
-                    name: 'React',
-                },
-            ],
-        })
+            }),
+            setSkills({
+                skills: [
+                    {
+                        id: 'sampleskill2',
+                        name: 'CSS/SASS',
+                    },
+                    {
+                        id: 'sampleskill3',
+                        name: 'JavaScript',
+                    },
+                    {
+                        id: 'sampleskill4',
+                        name: 'TDD',
+                    },
+                    {
+                        id: 'sampleskill5',
+                        name: 'React',
+                    },
+                ],
+            })
     }
 
-    clearData() {
+    const clearData = () => {
         this.setState({
             personal: {
                 id: uniqid(),
@@ -320,115 +319,123 @@ export class Main extends Component {
         })
     }
 
-    render() {
-        return (
-            <div className="main-wrapper">
-                <Inputs
-                    {...this.state}
-                    changeFirstName={(e) => {
-                        this.handleInput(e, 'firstName')
-                    }}
-                    changeLastName={(e) => {
-                        this.handleInput(e, 'lastName')
-                    }}
-                    changeDOB={(e) => {
-                        this.handleInput(e, 'birthday')
-                    }}
-                    changeTitle={(e) => {
-                        this.handleInput(e, 'title')
-                    }}
-                    changeAddress={(e) => {
-                        this.handleInput(e, 'address')
-                    }}
-                    changePhone={(e) => {
-                        this.handleInput(e, 'phone')
-                    }}
-                    changeEmail={(e) => {
-                        this.handleInput(e, 'email')
-                    }}
-                    changeDescription={(e) => {
-                        this.handleInput(e, 'description')
-                    }}
-                    uploadPic={(e) => {
-                        this.uploadPicture(e)
-                    }}
-                    changeInputTypeIn={(e) => {
-                        this.changeInputToDate(e)
-                    }}
-                    changeInputTypeOut={(e) => {
-                        this.changeInputToText(e)
-                    }}
-                    changePosition={(e, id) => {
-                        this.handleInputExperience(e, id, 'position')
-                    }}
-                    changeCompany={(e, id) => {
-                        this.handleInputExperience(e, id, 'company')
-                    }}
-                    changeCompanyFrom={(e, id) => {
-                        this.handleInputExperience(e, id, 'from')
-                    }}
-                    changeCompanyTo={(e, id) => {
-                        this.handleInputExperience(e, id, 'to')
-                    }}
-                    addInputFieldExperience={(e) => {
-                        this.addExperienceInput(e)
-                    }}
-                    removeInputFieldExperience={(e, id) => {
-                        this.removeExperienceInput(e, id)
-                    }}
-                    changeInstitution={(e, id) => {
-                        this.handleInputEducation(e, id, 'institution')
-                    }}
-                    changeCity={(e, id) => {
-                        this.handleInputEducation(e, id, 'city')
-                    }}
-                    changeDegree={(e, id) => {
-                        this.handleInputEducation(e, id, 'degree')
-                    }}
-                    changeMajor={(e, id) => {
-                        this.handleInputEducation(e, id, 'major')
-                    }}
-                    changeEducationFrom={(e, id) => {
-                        this.handleInputEducation(e, id, 'from')
-                    }}
-                    changeEducationTo={(e, id) => {
-                        this.handleInputEducation(e, id, 'to')
-                    }}
-                    addInputFieldEducation={(e) => {
-                        this.addEducationInput(e)
-                    }}
-                    removeInputFieldEducation={(e, id) => {
-                        this.removeEducationInput(e, id)
-                    }}
-                    changeSkill={(e, id) => {
-                        this.handleInputSkill(e, id)
-                    }}
-                    addSkill={(e) => {
-                        this.addSkillInput(e)
-                    }}
-                    getSample={() => {
-                        this.loadSample()
-                    }}
-                    resetData={() => {
-                        this.clearData()
-                    }}
-                ></Inputs>
+    return (
+        <div className="main-wrapper">
+            <Inputs
+                personal={personal}
+                experience={experience}
+                experiences={experiences.experiences}
+                education={education}
+                educations={educations.educations}
+                skill={skill}
+                skills={skills.skills}
+                changeFirstName={(e) => {
+                    handleInput(e, 'firstName')
+                }}
+                changeLastName={(e) => {
+                    handleInput(e, 'lastName')
+                }}
+                changeDOB={(e) => {
+                    handleInput(e, 'birthday')
+                }}
+                changeTitle={(e) => {
+                    handleInput(e, 'title')
+                }}
+                changeAddress={(e) => {
+                    handleInput(e, 'address')
+                }}
+                changePhone={(e) => {
+                    handleInput(e, 'phone')
+                }}
+                changeEmail={(e) => {
+                    handleInput(e, 'email')
+                }}
+                changeDescription={(e) => {
+                    handleInput(e, 'description')
+                }}
+                uploadPic={(e) => {
+                    uploadPicture(e)
+                }}
+                changeInputTypeIn={(e) => {
+                    changeInputToDate(e)
+                }}
+                changeInputTypeOut={(e) => {
+                    changeInputToText(e)
+                }}
+                changePosition={(e, id) => {
+                    handleInputExperience(e, id, 'position')
+                }}
+                changeCompany={(e, id) => {
+                    handleInputExperience(e, id, 'company')
+                }}
+                changeCompanyFrom={(e, id) => {
+                    handleInputExperience(e, id, 'from')
+                }}
+                changeCompanyTo={(e, id) => {
+                    handleInputExperience(e, id, 'to')
+                }}
+                addInputFieldExperience={(e) => {
+                    addExperienceInput(e)
+                }}
+                removeInputFieldExperience={(e, id) => {
+                    removeExperienceInput(e, id)
+                }}
+                changeInstitution={(e, id) => {
+                    handleInputEducation(e, id, 'institution')
+                }}
+                changeCity={(e, id) => {
+                    handleInputEducation(e, id, 'city')
+                }}
+                changeDegree={(e, id) => {
+                    handleInputEducation(e, id, 'degree')
+                }}
+                changeMajor={(e, id) => {
+                    handleInputEducation(e, id, 'major')
+                }}
+                changeEducationFrom={(e, id) => {
+                    handleInputEducation(e, id, 'from')
+                }}
+                changeEducationTo={(e, id) => {
+                    handleInputEducation(e, id, 'to')
+                }}
+                addInputFieldEducation={(e) => {
+                    addEducationInput(e)
+                }}
+                removeInputFieldEducation={(e, id) => {
+                    removeEducationInput(e, id)
+                }}
+                changeSkill={(e, id) => {
+                    handleInputSkill(e, id)
+                }}
+                addSkill={(e) => {
+                    addSkillInput(e)
+                }}
+                getSample={() => {
+                    loadSample()
+                }}
+                resetData={() => {
+                    clearData()
+                }}
+            ></Inputs>
 
-                <ReactToPrint
-                    trigger={() => {
-                        return (
-                            <div className="print">
-                                <img src={printIcon} alt="printer icon" />
-                            </div>
-                        )
-                    }}
-                    content={() => this.componentRef}
-                />
-                <Preview
-                    ref={(el) => (this.componentRef = el)}
-                    {...this.state}
-                ></Preview>
-            </div>
-        )
-    }
+            <ReactToPrint
+                trigger={() => (
+                    <div className="print">
+                        <img src={printIcon} alt="printer icon" />
+                    </div>
+                )}
+                content={() => componentRef.current}
+            />
+            <Preview
+                ref={componentRef}
+                personal={personal}
+                experience={experience}
+                experiences={experiences.experiences}
+                education={education}
+                educations={educations.educations}
+                skill={skill}
+                skills={skills.skills}
+            ></Preview>
+        </div>
+    )
 }
