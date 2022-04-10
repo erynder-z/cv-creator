@@ -3,7 +3,7 @@
 A React app to create your CV.
 Different sections can be added/removed dynamically and the finished CV can be saved as a PDF.
 
-[LIVE] https://erynder-z.github.io/cv-project/
+[LIVE] https://erynder-z.github.io/cv-creator/
 
 ## Cloning and installing
 
