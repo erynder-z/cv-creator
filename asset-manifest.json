@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/cv-creator/static/css/main.3c343a5a.css",
-    "main.js": "/cv-creator/static/js/main.874fa80e.js",
+    "main.js": "/cv-creator/static/js/main.6a42f300.js",
     "static/media/napoleon.jpg": "/cv-creator/static/media/napoleon.8b428bf4cb14b01c9052.jpg",
     "static/media/placeholder.png": "/cv-creator/static/media/placeholder.fed8a1cfd147c5cc008d.png",
     "index.html": "/cv-creator/index.html",
     "static/media/printer.svg": "/cv-creator/static/media/printer.2db477def5910fe4d736d869eb813174.svg",
     "main.3c343a5a.css.map": "/cv-creator/static/css/main.3c343a5a.css.map",
-    "main.874fa80e.js.map": "/cv-creator/static/js/main.874fa80e.js.map"
+    "main.6a42f300.js.map": "/cv-creator/static/js/main.6a42f300.js.map"
   },
   "entrypoints": [
     "static/css/main.3c343a5a.css",
-    "static/js/main.874fa80e.js"
+    "static/js/main.6a42f300.js"
   ]
 }
