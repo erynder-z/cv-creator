@@ -280,41 +280,49 @@ export const Main = () => {
     }
 
     const clearData = () => {
-        this.setState({
-            personal: {
-                id: uniqid(),
-                firstName: '',
-                lastName: '',
-                birthday: '',
-                title: '',
-                address: '',
-                phone: '',
-                email: '',
-                description: '',
-                picture: placeholder,
-            },
-            experience: {
-                id: uniqid(),
-                position: '',
-                company: '',
-                from: '',
-                to: '',
-            },
-            experiences: [],
-            education: {
-                id: uniqid(),
-                institution: '',
-                city: '',
-                degree: '',
-                major: '',
-                from: '',
-                to: '',
-            },
+        setPersonal({
+            id: uniqid(),
+            firstName: '',
+            lastName: '',
+            birthday: '',
+            title: '',
+            address: '',
+            phone: '',
+            email: '',
+            description: '',
+            picture: placeholder,
+        })
+
+        setExperience({
+            id: uniqid(),
+            position: '',
+            company: '',
+            from: '',
+            to: '',
+        })
+
+        setExperiences({ experiences: [] })
+
+        setEducation({
+            id: uniqid(),
+            institution: '',
+            city: '',
+            degree: '',
+            major: '',
+            from: '',
+            to: '',
+        })
+
+        setEducations({
             educations: [],
-            skill: {
-                id: uniqid(),
-                name: '',
-            },
+        })
+
+        setSkill({
+            id: uniqid(),
+            name: '',
+        })
+
+        setSkills({
             skills: [],
         })
     }
